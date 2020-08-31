@@ -1,0 +1,5121 @@
+<!DOCTYPE html><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>	
+			
+/* Style the tab content */
+
+
+.tab button {
+  background-color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+margin-top: 35px;
+  transition: 0.3s;
+ margin-bottom: 10px;
+font-size: 16px;
+}
+
+.tab {
+  overflow: hidden;
+   background-color:white;
+	
+}
+
+div.td1 {
+	height: 570px;	
+	overflow-y:auto;
+	
+}
+
+
+
+.accordion {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding:  10px;
+  width: 910px;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  display: block;
+  
+}
+
+.accordion:after {
+  content: '\005E';
+  color: white;
+  font-weight: bold;
+  float: left;
+	 margin-right:10px
+ 
+}
+
+.active:after {
+  content: "\2304";
+}
+
+.panel {
+  width: 910px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+ }
+
+	.accordion1 {
+	background-color:purple;
+  color: white;
+  cursor: pointer;
+  padding:  10px;
+	width: 288px;
+  border: none;
+    text-align: left;
+  outline: none;
+  transition: 0.4s;
+  display:inline-blocks;
+  
+}
+.accordion1:after {
+  content: '\005E';
+  color: white;
+  font-weight: bold;
+  float: left;
+     margin-right:10px
+ 
+}
+.active:after {
+  content: "\2304"; 
+}
+
+.panel1 {
+
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  font-size: 15px;
+
+}
+
+.accordion2 {
+	background-color:black;
+  color: white;
+  cursor: pointer;
+  padding:  10px;
+  width: 288px;
+  border: none;
+    text-align: left;
+  outline: none;
+  transition: 0.4s;
+  display:inline-blocks;
+  
+}
+.accordion2:after {
+  content: '\005E';
+  color: white;
+  font-weight: bold;
+  float: left;
+	 margin-right:10px
+ 
+}
+.active:after {
+  content: "\2304"; 
+  
+}
+
+.accordion3 {
+	background-color:maroon;
+  color: white;
+  cursor: pointer;
+  padding:  10px;
+  width: 288px;
+  border: none;
+    text-align: left;
+  outline: none;
+  transition: 0.4s;
+  display:inline-blocks;
+  
+}
+.accordion3:after {
+  content: '\005E';
+  color: white;
+  font-weight: bold;
+  float: left;
+	 margin-right:10px
+ 
+}
+.active:after {
+  content: "\2304"; 
+  
+}
+
+div.main {
+margin-left:75px;
+}
+
+	</style>
+</head>
+<body onload="myFunctionO();">
+<div class="main">
+<table>
+<tr>
+<td>
+<div class="tab">
+<table>
+<tr>
+<td><img width="150" height="50" src="\\Ctsc00954972001\C\HTMLDemo\POC_MP\logo.jpg"></td><td><button class="tablink" onclick="setColor1();openPage('OVERVIEW');myFunctionO();" id="button1" style="color:grey;margin-left:20px;"><b>OVERVIEW</b></button><button class="tablink" onclick="setColor2();openPage('PAYMENT');myFunctionP();" id="button2" style="color:grey;margin-left:20px;"><b>PAYMENT SUMMARY</b></button><button class="tablink" onclick="setColor3();openPage('CLAIMS');myFunctionC();" id="button3" style="color:grey;margin-left:20px;"><b>CLAIMS</b></button><button class="tablink" onclick="setColor4();openPage('BENEFIT');myFunctionB();" id="button4" style="color:grey;margin-left:20px;"><b>BENEFIT SUMMARY</b></button></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="td1">
+<div id="OVERVIEW" class="tabcontent">
+<div id="myTable" style="margin-top:10px;margin-bottom:10px;"></div>
+<table>
+<tr>
+<td><button class="accordion1">CUSTOMER INFO</button>
+<div class="panel1" id="customerinfo1"></div>
+</td><td style="width:30px;"></td><td><button class="accordion2">MEMBER INFO </button>
+<div class="panel1" id="memberinfo1"></div>
+</td><td style="width:30px;"></td><td><button class="accordion3">COMPANY INFO</button>
+<div class="panel1" id="companyinfo1"></div>
+</td><td style="width:25px;"></td>
+</tr>
+<tr style="height:25px;"></tr>
+</table>
+<button class="accordion">Explanation of Benefits (EOB)</button>
+<div class="panel" id="eob1"></div>
+<div id="myTable1" style="margin-top:30px;"></div>
+</div>
+<div id="PAYMENT" class="tabcontent">
+<div>
+<table>
+<tr>
+<td>
+<div id="myTable2" style="margin-top:10px;"></div>
+</td><td style="width:25px;"></td>
+</tr>
+</table>
+</div>
+</div>
+<div id="CLAIMS" class="tabcontent">
+<div>
+<table>
+<tr>
+<td>
+<div id="myTable3" style="margin-top:10px;"></div>
+</td><td style="width:25px;"></td>
+</tr>
+</table>
+</div>
+</div>
+<div id="BENEFIT" class="tabcontent">
+<div>
+<table>
+<tr>
+<td>
+<div id="myTable4" style="margin-top:10px;"></div>
+</td><td style="width:25px;"></td>
+</tr>
+</table>
+</div>
+</div>
+<div id="unused" class="tabcontent">
+<html lang="en-US">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML_DEMO_xsltest_SJ</title>
+<!-- OpenText Exstream Version 16.4.0 64-bit (DBCS)-->
+<!-- CreationDate: 3/18/2020 11:58:36 -->
+<!-- For: Registered to COGNIZAN -->
+<meta charset="utf-8">
+<style type="text/css">
+<!--
+/* StylesContainer.css */
+.para { margin-top: 0; margin-bottom: 0; font-size: 100%; font-weight: normal}
+table, table td { border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top }
+div { text-align: left }
+.container { padding: 0px; overflow: hidden; text-align: left }
+.verticalSpan {  }
+.verticalSpanChild { padding: 0px }
+.horizontalSpan { }
+.horizontalSpanChild{ display: inline-block; vertical-align: top; padding: 0px }
+.verticalTile { table-layout: fixed; display: table }
+.verticalTileRow { display: table-row; padding: 0px }
+.verticalTileChild{ display: table-cell; padding: 0px; vertical-align: top }
+.horizontalTile { table-layout: fixed; display: table }
+.horizontalTileRow { display: table-row; padding: 0px }
+.horizontalTileChild { display: table-cell; padding: 0px; vertical-align: top }
+.absolutePosition { position: relative; overflow: visible }
+.absolutePositionChild { position: absolute }
+.gridLayout { overflow: visible; border-collapse: collapse; table-layout: fixed }
+.gridLayoutRow { }
+.gridLayoutCell { }
+tr { vertical-align : top }
+.linktext {font: 16px "Times New Roman", sans-serif, serif }
+body { margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; word-wrap: break-word; font-size: 10px; }
+form { margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; }
+.text40 {font: bold 16.00px "Times New Roman", "Times New Roman", serif; line-height: 19.00px }
+.text42 {font: 16.00px "Times New Roman", "Times New Roman", serif; line-height: 19.00px }
+.text43 {font: 13.33px "Times New Roman", "Times New Roman", serif; line-height: 16.00px }
+.text44 {font: 13.33px "Arial", "Helvetica", sans-serif; line-height: 15.00px }
+.text55 {font: bold 13.33px "Arial", "Helvetica", sans-serif; line-height: 16.00px }
+.text56 {font: bold 14.67px "Arial", "Helvetica", sans-serif; line-height: 17.00px }
+.text57 {font: 16.00px "Arial", "Helvetica", sans-serif; line-height: 19.00px }
+.text58 {font: bold 16.00px "Arial", "Helvetica", sans-serif; line-height: 20.00px }
+.text59 {font: bold 18.67px "Arial", "Helvetica", sans-serif; line-height: 22.00px }
+.text152 {font: 18.67px "Times New Roman", "Times New Roman", serif; line-height: 22.00px }
+.text273 {font: 14.67px "Arial", "Helvetica", sans-serif; line-height: 17.00px }
+.text296 {font: bold 21.33px "Arial", "Helvetica", sans-serif; line-height: 25.00px }
+.text317 {font: bold 18.67px "Times New Roman", "Times New Roman", serif; line-height: 22.00px }
+.text411 {font: bold 34.67px "Arial", "Helvetica", sans-serif; line-height: 41.00px }
+.text673 {font: 18.67px "Arial", "Helvetica", sans-serif; line-height: 22.00px }
+.text918 {font: bold 24.00px "Arial", "Helvetica", sans-serif; line-height: 29.00px }
+.text1021 {font: bold 29.33px "Arial", "Helvetica", sans-serif; line-height: 35.00px }
+/* StylesContainerHTMLDemoOUTPUTQueue_SJ.css */
+.classContainer1  { width: 935px; margin: 0 auto }
+.classGridCell1 { width: 935px; height: 0px }
+.classGridCell2 { text-align: left; vertical-align: top; width: 935px }
+.classGridCell3 { display: inline-block }
+.classContainer2  { overflow: visible; }
+.classTable1 { width: 915px; }
+.classTable2 { table-layout: fixed; }
+.classTablecol1 { width: 174px; }
+.classTablecol2 { width: 637px; }
+.classTablecol3 { width: 104px; }
+.classTableRow1 { height: 49px }
+.classTablecol4
+{
+width:801px; 
+vertical-align: top; text-align: left; padding-top:0.000000in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.145833in 
+}
+.classSpanTbl1 { color:#000000;font-weight:bold; }
+.classTablecol5
+{
+width:95px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTableRow2 { height: 28px }
+.classTablecol6
+{
+width:164px; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl2 { color:#000000;font-weight:bold; }
+.classTablecol7
+{
+width:628px; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl3 { color:#000000;font-weight:bold; }
+.classTablecol8
+{
+width:95px; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara5  { text-align: right }
+.classSpanTbl4 { color:#000000;font-weight:bold; }
+.classTableRow3 { height: 36px }
+.classTablecol9
+{
+width:164px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.000000in 
+}
+.classPara6  { padding-top: 7px; padding-bottom: 7px }
+.classSpanTbl5 { color:#000000; }
+.classTablecol10
+{
+width:628px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.000000in 
+}
+.classPara7  { padding-top: 7px; padding-bottom: 7px }
+.classSpanTbl6 { color:#000000; }
+.classTablecol11
+{
+width:95px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara8  { text-align: right; padding-top: 7px }
+.classSpanTbl7 { color:#000000; }
+.classTableRow4 { height: 34px }
+.classTablecol12
+{
+width:164px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara9  { padding-top: 7px }
+.classSpanTbl8 { color:#000000; }
+.classTablecol13
+{
+width:628px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara10  { padding-top: 7px }
+.classSpanTbl9 { color:#000000; }
+.classTablecol14
+{
+width:95px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara11  { text-align: right; padding-top: 7px }
+.classSpanTbl10 { color:#000000; }
+.classTableRow5 { height: 34px }
+.classTablecol15
+{
+width:164px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara12  { padding-top: 7px }
+.classSpanTbl11 { color:#000000; }
+.classTablecol16
+{
+width:628px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara13  { padding-top: 7px }
+.classSpanTbl12 { color:#000000; }
+.classTablecol17
+{
+width:95px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara14  { text-align: right; padding-top: 7px }
+.classSpanTbl13 { color:#000000; }
+.classTableRow6 { height: 51px }
+.classTablecol18
+{
+width:164px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara15  { padding-top: 7px }
+.classSpanTbl14 { color:#000000; }
+.classTablecol19
+{
+width:628px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara16  { padding-top: 7px }
+.classSpanTbl15 { color:#000000; }
+.classTablecol20
+{
+width:95px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara17  { text-align: right; padding-top: 7px }
+.classSpanTbl16 { color:#000000; }
+.classTableRow7 { height: 34px }
+.classTablecol21
+{
+width:164px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara18  { padding-top: 7px }
+.classSpanTbl17 { color:#000000; }
+.classTablecol22
+{
+width:628px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara19  { padding-top: 7px }
+.classSpanTbl18 { color:#000000; }
+.classTablecol23
+{
+width:95px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara20  { text-align: right; padding-top: 7px }
+.classSpanTbl19 { color:#000000; }
+.classTableRow8 { height: 34px }
+.classTablecol24
+{
+width:164px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara21  { padding-top: 7px }
+.classSpanTbl20 { color:#000000; }
+.classTablecol25
+{
+width:628px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara22  { padding-top: 7px }
+.classSpanTbl21 { color:#000000; }
+.classTablecol26
+{
+width:95px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara23  { text-align: right; padding-top: 7px }
+.classSpanTbl22 { color:#000000; }
+.classTableRow9 { height: 42px }
+.classTablecol27
+{
+width:164px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara24  { padding-top: 7px }
+.classSpanTbl23 { color:#000000; }
+.classTablecol28
+{
+width:628px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara25  { padding-top: 7px }
+.classSpanTbl24 { color:#000000; }
+.classTablecol29
+{
+width:95px; 
+border-bottom: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara26  { text-align: right; padding-top: 7px }
+.classSpanTbl25 { color:#000000; }
+.classTableRow10 { height: 19px }
+.classTablecol30
+{
+width:164px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol31
+{
+width:628px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol32
+{
+width:95px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classAddin3 { width: 915px; height: 230px; z-index:10000;  }
+.classTable3 { width: 915px; }
+.classTable4 { table-layout: fixed; }
+.classTableRow11 { height: 107px }
+.classTablecol33
+{
+width:906px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl26 { color:#000000; }
+.classSpanTbl27 { color:#000000;font-weight:bold; }
+.classSpanTbl28 { color:#000000; }
+.classSpanTbl29 { color:#000000;font-weight:bold; }
+.classSpanTbl30 { color:#000000; }
+.classSpanTbl31 { color:#8F8F8F; }
+.classSpanTbl32 { color:#8F8F8F; }
+.classTable5 { width: 915px; }
+.classTable6 { table-layout: fixed; }
+.classTablecol34 { width: 182px; }
+.classTablecol35 { width: 163px; }
+.classTablecol36 { width: 133px; }
+.classTablecol37 { width: 156px; }
+.classTablecol38 { width: 98px; }
+.classTablecol39 { width: 183px; }
+.classTableRow12 { height: 46px }
+.classTablecol40
+{
+width:906px; 
+border-top: #A1A1A1 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.093750in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.145833in 
+}
+.classSpanTbl33 { color:#000000;font-weight:bold; }
+.classSpanTbl34 { color:#000000; }
+.classSpanTbl35 { color:#000000;font-weight:bold; }
+.classTableRow13 { height: 42px }
+.classTablecol41
+{
+width:722px; background-color:#000000; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classPara35  { text-align: center }
+.classSpanTbl36 { color:#FFFFFF;font-weight:bold; }
+.classTablecol42
+{
+width:174px; background-color:#000000; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl37 { color:#FFFFFF;font-weight:bold; }
+.classTableRow14 { height: 36px }
+.classTablecol43
+{
+width:173px; 
+border-bottom: #000000 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.145833in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl38 { color:#000000;font-weight:bold; }
+.classTablecol44
+{
+width:154px; 
+border-bottom: #000000 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl39 { color:#000000;font-weight:bold; }
+.classTablecol45
+{
+width:124px; 
+border-bottom: #000000 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl40 { color:#000000;font-weight:bold; }
+.classTablecol46
+{
+width:146px; 
+border-bottom: #000000 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl41 { color:#000000;font-weight:bold; }
+.classTablecol47
+{
+width:88px; 
+border-bottom: #000000 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl42 { color:#000000;font-weight:bold; }
+.classTablecol48
+{
+width:174px; 
+border-bottom: #000000 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara42  { text-align: right }
+.classSpanTbl43 { color:#000000;font-weight:bold; }
+.classTableRow15 { height: 25px }
+.classTablecol49
+{
+width:173px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl44 { color:#000000; }
+.classTablecol50
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl45 { color:#000000; }
+.classTablecol51
+{
+width:124px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl46 { color:#000000; }
+.classTablecol52
+{
+width:146px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl47 { color:#000000; }
+.classTablecol53
+{
+width:88px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl48 { color:#000000; }
+.classTablecol54
+{
+width:174px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara48  { text-align: right }
+.classSpanTbl49 { color:#000000; }
+.classTableRow16 { height: 25px }
+.classTablecol55
+{
+width:173px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl50 { color:#000000; }
+.classTablecol56
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl51 { color:#000000; }
+.classTablecol57
+{
+width:124px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl52 { color:#000000; }
+.classTablecol58
+{
+width:146px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl53 { color:#000000; }
+.classTablecol59
+{
+width:88px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl54 { color:#000000; }
+.classTablecol60
+{
+width:174px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara54  { text-align: right }
+.classSpanTbl55 { color:#000000; }
+.classTableRow17 { height: 25px }
+.classTablecol61
+{
+width:173px; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl56 { color:#000000; }
+.classTablecol62
+{
+width:154px; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl57 { color:#000000; }
+.classTablecol63
+{
+width:124px; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl58 { color:#000000; }
+.classTablecol64
+{
+width:146px; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl59 { color:#000000; }
+.classTablecol65
+{
+width:88px; 
+vertical-align: bottom; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl60 { color:#000000; }
+.classTablecol66
+{
+width:174px; 
+vertical-align: bottom; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classPara60  { text-align: right }
+.classSpanTbl61 { color:#000000; }
+.classTableRow18 { height: 71px }
+.classTablecol67
+{
+width:173px; 
+border-top: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.135417in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.250000in 
+}
+.classSpanTbl62 { color:#000000;font-weight:bold; }
+.classTablecol68
+{
+width:154px; 
+border-top: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.041667in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol69
+{
+width:124px; 
+border-top: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.041667in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol70
+{
+width:146px; 
+border-top: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.041667in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol71
+{
+width:88px; 
+border-top: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.041667in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol72
+{
+width:174px; 
+border-top: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.041667in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classAddin1 { width: 917px; height: 221px; z-index:10000;  }
+.classTable7 { width: 916px; }
+.classTable8 { table-layout: fixed; }
+.classTablecol73 { width: 182px; }
+.classTablecol74 { width: 70px; }
+.classTablecol75 { width: 99px; }
+.classTablecol76 { width: 98px; }
+.classTablecol77 { width: 76px; }
+.classTablecol78 { width: 58px; }
+.classTablecol79 { width: 77px; }
+.classTablecol80 { width: 77px; }
+.classTablecol81 { width: 84px; }
+.classTablecol82 { width: 94px; }
+.classTableRow19 { height: 55px }
+.classTablecol83
+{
+width:916px; 
+border-top: #A1A1A1 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.093750in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl63 { color:#000000;font-weight:bold; }
+.classTableRow20 { height: 30px }
+.classTablecol84
+{
+width:916px; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl64 { color:#000000;font-weight:bold; }
+.classTableRow21 { height: 41px }
+.classTablecol85
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl65 { color:#8F8F8F; }
+.classSpanTbl66 { color:#8F8F8F; }
+.classTablecol86
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara73  { text-align: center }
+.classSpanTbl67 { color:#8F8F8F; }
+.classPara74  { text-align: center }
+.classSpanTbl68 { color:#8F8F8F; }
+.classTablecol87
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara75  { text-align: center }
+.classSpanTbl69 { color:#8F8F8F; }
+.classTablecol88
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara76  { text-align: center }
+.classSpanTbl70 { color:#8F8F8F; }
+.classPara77  { text-align: center }
+.classSpanTbl71 { color:#8F8F8F; }
+.classTablecol89
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara78  { text-align: center }
+.classSpanTbl72 { color:#8F8F8F; }
+.classPara79  { text-align: center }
+.classSpanTbl73 { color:#8F8F8F; }
+.classTablecol90
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara80  { text-align: center }
+.classSpanTbl74 { color:#8F8F8F; }
+.classTablecol91
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara81  { text-align: center }
+.classSpanTbl75 { color:#8F8F8F; }
+.classPara82  { text-align: center }
+.classSpanTbl76 { color:#8F8F8F; }
+.classTablecol92
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara83  { text-align: center }
+.classSpanTbl77 { color:#8F8F8F; }
+.classTablecol93
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara84  { text-align: center }
+.classSpanTbl78 { color:#8F8F8F; }
+.classTablecol94
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara85  { text-align: center }
+.classSpanTbl79 { color:#A1A1A1; }
+.classPara86  { text-align: center }
+.classSpanTbl80 { color:#A1A1A1; }
+.classTableRow22 { height: 26px }
+.classTablecol95
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl81 { color:#000000;font-weight:bold; }
+.classTablecol96
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara88  { text-align: center }
+.classSpanTbl82 { color:#000000; }
+.classTablecol97
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara89  { text-align: center }
+.classSpanTbl83 { color:#000000; }
+.classTablecol98
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara90  { text-align: center }
+.classSpanTbl84 { color:#000000; }
+.classTablecol99
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara91  { text-align: center }
+.classSpanTbl85 { color:#000000; }
+.classTablecol100
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara92  { text-align: center }
+.classSpanTbl86 { color:#000000; }
+.classTablecol101
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara93  { text-align: center }
+.classSpanTbl87 { color:#000000; }
+.classTablecol102
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara94  { text-align: center }
+.classSpanTbl88 { color:#000000; }
+.classTablecol103
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara95  { text-align: center }
+.classSpanTbl89 { color:#000000; }
+.classTablecol104
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara96  { text-align: center }
+.classSpanTbl90 { color:#000000; }
+.classTableRow23 { height: 26px }
+.classTablecol105
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl91 { color:#000000;font-weight:bold; }
+.classTablecol106
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara98  { text-align: center }
+.classSpanTbl92 { color:#000000; }
+.classTablecol107
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara99  { text-align: center }
+.classSpanTbl93 { color:#000000; }
+.classTablecol108
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara100  { text-align: center }
+.classSpanTbl94 { color:#000000; }
+.classTablecol109
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara101  { text-align: center }
+.classSpanTbl95 { color:#000000; }
+.classTablecol110
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara102  { text-align: center }
+.classSpanTbl96 { color:#000000; }
+.classTablecol111
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara103  { text-align: center }
+.classSpanTbl97 { color:#000000; }
+.classTablecol112
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara104  { text-align: center }
+.classSpanTbl98 { color:#000000; }
+.classTablecol113
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara105  { text-align: center }
+.classSpanTbl99 { color:#000000; }
+.classTablecol114
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara106  { text-align: center }
+.classSpanTbl100 { color:#000000; }
+.classTableRow24 { height: 26px }
+.classTablecol115
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl101 { color:#000000;font-weight:bold; }
+.classTablecol116
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara108  { text-align: center }
+.classSpanTbl102 { color:#000000; }
+.classTablecol117
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara109  { text-align: center }
+.classSpanTbl103 { color:#000000; }
+.classTablecol118
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara110  { text-align: center }
+.classSpanTbl104 { color:#000000; }
+.classTablecol119
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara111  { text-align: center }
+.classSpanTbl105 { color:#000000; }
+.classTablecol120
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara112  { text-align: center }
+.classSpanTbl106 { color:#000000; }
+.classTablecol121
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara113  { text-align: center }
+.classSpanTbl107 { color:#000000; }
+.classTablecol122
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara114  { text-align: center }
+.classSpanTbl108 { color:#000000; }
+.classTablecol123
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara115  { text-align: center }
+.classSpanTbl109 { color:#000000; }
+.classTablecol124
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara116  { text-align: center }
+.classSpanTbl110 { color:#000000; }
+.classTable9 { width: 916px; }
+.classTable10 { table-layout: fixed; }
+.classTablecol125 { width: 182px; }
+.classTablecol126 { width: 70px; }
+.classTablecol127 { width: 99px; }
+.classTablecol128 { width: 98px; }
+.classTablecol129 { width: 76px; }
+.classTablecol130 { width: 58px; }
+.classTablecol131 { width: 77px; }
+.classTablecol132 { width: 77px; }
+.classTablecol133 { width: 84px; }
+.classTablecol134 { width: 94px; }
+.classTableRow25 { height: 49px }
+.classTablecol135
+{
+width:916px; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.250000in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl111 { color:#000000;font-weight:bold; }
+.classTableRow26 { height: 41px }
+.classTablecol136
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl112 { color:#8F8F8F; }
+.classSpanTbl113 { color:#8F8F8F; }
+.classTablecol137
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara120  { text-align: center }
+.classSpanTbl114 { color:#8F8F8F; }
+.classPara121  { text-align: center }
+.classSpanTbl115 { color:#8F8F8F; }
+.classTablecol138
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara122  { text-align: center }
+.classSpanTbl116 { color:#8F8F8F; }
+.classTablecol139
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara123  { text-align: center }
+.classSpanTbl117 { color:#8F8F8F; }
+.classPara124  { text-align: center }
+.classSpanTbl118 { color:#8F8F8F; }
+.classTablecol140
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara125  { text-align: center }
+.classSpanTbl119 { color:#8F8F8F; }
+.classPara126  { text-align: center }
+.classSpanTbl120 { color:#8F8F8F; }
+.classTablecol141
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara127  { text-align: center }
+.classSpanTbl121 { color:#8F8F8F; }
+.classTablecol142
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara128  { text-align: center }
+.classSpanTbl122 { color:#8F8F8F; }
+.classPara129  { text-align: center }
+.classSpanTbl123 { color:#8F8F8F; }
+.classTablecol143
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara130  { text-align: center }
+.classSpanTbl124 { color:#8F8F8F; }
+.classTablecol144
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara131  { text-align: center }
+.classSpanTbl125 { color:#8F8F8F; }
+.classTablecol145
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara132  { text-align: center }
+.classSpanTbl126 { color:#A1A1A1; }
+.classPara133  { text-align: center }
+.classSpanTbl127 { color:#A1A1A1; }
+.classTableRow27 { height: 26px }
+.classTablecol146
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl128 { color:#000000;font-weight:bold; }
+.classTablecol147
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara135  { text-align: center }
+.classSpanTbl129 { color:#000000; }
+.classTablecol148
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara136  { text-align: center }
+.classSpanTbl130 { color:#000000; }
+.classTablecol149
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara137  { text-align: center }
+.classSpanTbl131 { color:#000000; }
+.classTablecol150
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara138  { text-align: center }
+.classSpanTbl132 { color:#000000; }
+.classTablecol151
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara139  { text-align: center }
+.classSpanTbl133 { color:#000000; }
+.classTablecol152
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara140  { text-align: center }
+.classSpanTbl134 { color:#000000; }
+.classTablecol153
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara141  { text-align: center }
+.classSpanTbl135 { color:#000000; }
+.classTablecol154
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara142  { text-align: center }
+.classSpanTbl136 { color:#000000; }
+.classTablecol155
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara143  { text-align: center }
+.classSpanTbl137 { color:#000000; }
+.classTableRow28 { height: 26px }
+.classTablecol156
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl138 { color:#000000;font-weight:bold; }
+.classTablecol157
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara145  { text-align: center }
+.classSpanTbl139 { color:#000000; }
+.classTablecol158
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara146  { text-align: center }
+.classSpanTbl140 { color:#000000; }
+.classTablecol159
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara147  { text-align: center }
+.classSpanTbl141 { color:#000000; }
+.classTablecol160
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara148  { text-align: center }
+.classSpanTbl142 { color:#000000; }
+.classTablecol161
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara149  { text-align: center }
+.classSpanTbl143 { color:#000000; }
+.classTablecol162
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara150  { text-align: center }
+.classSpanTbl144 { color:#000000; }
+.classTablecol163
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara151  { text-align: center }
+.classSpanTbl145 { color:#000000; }
+.classTablecol164
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara152  { text-align: center }
+.classSpanTbl146 { color:#000000; }
+.classTablecol165
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara153  { text-align: center }
+.classSpanTbl147 { color:#000000; }
+.classTableRow29 { height: 26px }
+.classTablecol166
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl148 { color:#000000;font-weight:bold; }
+.classTablecol167
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara155  { text-align: center }
+.classSpanTbl149 { color:#000000; }
+.classTablecol168
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara156  { text-align: center }
+.classSpanTbl150 { color:#000000; }
+.classTablecol169
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara157  { text-align: center }
+.classSpanTbl151 { color:#000000; }
+.classTablecol170
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara158  { text-align: center }
+.classSpanTbl152 { color:#000000; }
+.classTablecol171
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara159  { text-align: center }
+.classSpanTbl153 { color:#000000; }
+.classTablecol172
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara160  { text-align: center }
+.classSpanTbl154 { color:#000000; }
+.classTablecol173
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara161  { text-align: center }
+.classSpanTbl155 { color:#000000; }
+.classTablecol174
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara162  { text-align: center }
+.classSpanTbl156 { color:#000000; }
+.classTablecol175
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara163  { text-align: center }
+.classSpanTbl157 { color:#000000; }
+.classTable11 { width: 916px; }
+.classTable12 { table-layout: fixed; }
+.classTablecol176 { width: 182px; }
+.classTablecol177 { width: 70px; }
+.classTablecol178 { width: 99px; }
+.classTablecol179 { width: 98px; }
+.classTablecol180 { width: 76px; }
+.classTablecol181 { width: 58px; }
+.classTablecol182 { width: 77px; }
+.classTablecol183 { width: 77px; }
+.classTablecol184 { width: 84px; }
+.classTablecol185 { width: 94px; }
+.classTableRow30 { height: 49px }
+.classTablecol186
+{
+width:916px; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.250000in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl158 { color:#000000;font-weight:bold; }
+.classTableRow31 { height: 41px }
+.classTablecol187
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl159 { color:#8F8F8F; }
+.classSpanTbl160 { color:#8F8F8F; }
+.classTablecol188
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara167  { text-align: center }
+.classSpanTbl161 { color:#8F8F8F; }
+.classPara168  { text-align: center }
+.classSpanTbl162 { color:#8F8F8F; }
+.classTablecol189
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara169  { text-align: center }
+.classSpanTbl163 { color:#8F8F8F; }
+.classTablecol190
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara170  { text-align: center }
+.classSpanTbl164 { color:#8F8F8F; }
+.classPara171  { text-align: center }
+.classSpanTbl165 { color:#8F8F8F; }
+.classTablecol191
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara172  { text-align: center }
+.classSpanTbl166 { color:#8F8F8F; }
+.classPara173  { text-align: center }
+.classSpanTbl167 { color:#8F8F8F; }
+.classTablecol192
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara174  { text-align: center }
+.classSpanTbl168 { color:#8F8F8F; }
+.classTablecol193
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara175  { text-align: center }
+.classSpanTbl169 { color:#8F8F8F; }
+.classPara176  { text-align: center }
+.classSpanTbl170 { color:#8F8F8F; }
+.classTablecol194
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara177  { text-align: center }
+.classSpanTbl171 { color:#8F8F8F; }
+.classTablecol195
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara178  { text-align: center }
+.classSpanTbl172 { color:#8F8F8F; }
+.classTablecol196
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-top: #C4C4C4 1px solid; border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: center; padding-top:0.041667in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara179  { text-align: center }
+.classSpanTbl173 { color:#A1A1A1; }
+.classPara180  { text-align: center }
+.classSpanTbl174 { color:#A1A1A1; }
+.classTableRow32 { height: 26px }
+.classTablecol197
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl175 { color:#000000;font-weight:bold; }
+.classTablecol198
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara182  { text-align: center }
+.classSpanTbl176 { color:#000000; }
+.classTablecol199
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara183  { text-align: center }
+.classSpanTbl177 { color:#000000; }
+.classTablecol200
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara184  { text-align: center }
+.classSpanTbl178 { color:#000000; }
+.classTablecol201
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara185  { text-align: center }
+.classSpanTbl179 { color:#000000; }
+.classTablecol202
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara186  { text-align: center }
+.classSpanTbl180 { color:#000000; }
+.classTablecol203
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara187  { text-align: center }
+.classSpanTbl181 { color:#000000; }
+.classTablecol204
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara188  { text-align: center }
+.classSpanTbl182 { color:#000000; }
+.classTablecol205
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara189  { text-align: center }
+.classSpanTbl183 { color:#000000; }
+.classTablecol206
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara190  { text-align: center }
+.classSpanTbl184 { color:#000000; }
+.classTableRow33 { height: 26px }
+.classTablecol207
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl185 { color:#000000;font-weight:bold; }
+.classTablecol208
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara192  { text-align: center }
+.classSpanTbl186 { color:#000000; }
+.classTablecol209
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara193  { text-align: center }
+.classSpanTbl187 { color:#000000; }
+.classTablecol210
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara194  { text-align: center }
+.classSpanTbl188 { color:#000000; }
+.classTablecol211
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara195  { text-align: center }
+.classSpanTbl189 { color:#000000; }
+.classTablecol212
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara196  { text-align: center }
+.classSpanTbl190 { color:#000000; }
+.classTablecol213
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara197  { text-align: center }
+.classSpanTbl191 { color:#000000; }
+.classTablecol214
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara198  { text-align: center }
+.classSpanTbl192 { color:#000000; }
+.classTablecol215
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara199  { text-align: center }
+.classSpanTbl193 { color:#000000; }
+.classTablecol216
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara200  { text-align: center }
+.classSpanTbl194 { color:#000000; }
+.classTableRow34 { height: 26px }
+.classTablecol217
+{
+width:173px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classSpanTbl195 { color:#000000;font-weight:bold; }
+.classTablecol218
+{
+width:61px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara202  { text-align: center }
+.classSpanTbl196 { color:#000000; }
+.classTablecol219
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara203  { text-align: center }
+.classSpanTbl197 { color:#000000; }
+.classTablecol220
+{
+width:89px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara204  { text-align: center }
+.classSpanTbl198 { color:#000000; }
+.classTablecol221
+{
+width:66px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara205  { text-align: center }
+.classSpanTbl199 { color:#000000; }
+.classTablecol222
+{
+width:48px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara206  { text-align: center }
+.classSpanTbl200 { color:#000000; }
+.classTablecol223
+{
+width:68px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara207  { text-align: center }
+.classSpanTbl201 { color:#000000; }
+.classTablecol224
+{
+width:67px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara208  { text-align: center }
+.classSpanTbl202 { color:#000000; }
+.classTablecol225
+{
+width:75px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara209  { text-align: center }
+.classSpanTbl203 { color:#000000; }
+.classTablecol226
+{
+width:85px; 
+border-left: #C4C4C4 1px solid; 
+border-right: #C4C4C4 1px solid; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: middle; text-align: center; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara210  { text-align: center }
+.classSpanTbl204 { color:#000000; }
+.classTable13 { width: 911px; }
+.classTable14 { table-layout: fixed; }
+.classTablecol227 { width: 442px; }
+.classTablecol228 { width: 150px; }
+.classTablecol229 { width: 163px; }
+.classTablecol230 { width: 156px; }
+.classTableRow35 { height: 54px }
+.classTablecol231
+{
+width:911px; 
+border-top: #A1A1A1 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.093750in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.250000in 
+}
+.classSpanTbl205 { color:#A1A1A1;font-weight:bold; }
+.classTableRow36 { height: 42px }
+.classTablecol232
+{
+width:902px; background-color:#000000; 
+vertical-align: top; text-align: left; padding-top:0.104167in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.104167in 
+}
+.classSpanTbl206 { color:#FFFFFF;font-weight:bold; }
+.classTableRow37 { height: 30px }
+.classTablecol233
+{
+width:432px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl207 { color:#A1A1A1;font-weight:bold; }
+.classTablecol234
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl208 { color:#A1A1A1;font-weight:bold; }
+.classTablecol235
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl209 { color:#A1A1A1;font-weight:bold; }
+.classTablecol236
+{
+width:146px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl210 { color:#A1A1A1;font-weight:bold; }
+.classTableRow38 { height: 26px }
+.classTablecol237
+{
+width:432px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl211 { color:#3838FF;font-weight:bold; }
+.classTablecol238
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTablecol239
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTablecol240
+{
+width:146px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTableRow39 { height: 25px }
+.classTablecol241
+{
+width:432px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl212 { color:#000000; }
+.classTablecol242
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl213 { color:#000000; }
+.classTablecol243
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl214 { color:#000000; }
+.classTablecol244
+{
+width:146px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl215 { color:#000000; }
+.classTableRow40 { height: 25px }
+.classTablecol245
+{
+width:432px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl216 { color:#000000; }
+.classTablecol246
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl217 { color:#000000; }
+.classTablecol247
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl218 { color:#000000; }
+.classTablecol248
+{
+width:146px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl219 { color:#000000; }
+.classTableRow41 { height: 25px }
+.classTablecol249
+{
+width:432px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl220 { color:#000000; }
+.classTablecol250
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl221 { color:#000000; }
+.classTablecol251
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl222 { color:#000000; }
+.classTablecol252
+{
+width:146px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl223 { color:#000000; }
+.classTableRow42 { height: 25px }
+.classTablecol253
+{
+width:432px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl224 { color:#000000; }
+.classTablecol254
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl225 { color:#000000; }
+.classTablecol255
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl226 { color:#000000; }
+.classTablecol256
+{
+width:146px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl227 { color:#000000; }
+.classTableRow43 { height: 7px }
+.classTablecol257
+{
+width:432px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol258
+{
+width:141px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol259
+{
+width:154px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol260
+{
+width:146px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTable15 { width: 916px; }
+.classTable16 { table-layout: fixed; }
+.classTablecol261 { width: 444px; }
+.classTablecol262 { width: 151px; }
+.classTablecol263 { width: 164px; }
+.classTablecol264 { width: 157px; }
+.classTableRow44 { height: 42px }
+.classTablecol265
+{
+width:906px; background-color:#000000; 
+vertical-align: top; text-align: left; padding-top:0.104167in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.104167in 
+}
+.classSpanTbl228 { color:#FFFFFF;font-weight:bold; }
+.classTableRow45 { height: 30px }
+.classTablecol266
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl229 { color:#A1A1A1;font-weight:bold; }
+.classTablecol267
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl230 { color:#A1A1A1;font-weight:bold; }
+.classTablecol268
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl231 { color:#A1A1A1;font-weight:bold; }
+.classTablecol269
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl232 { color:#A1A1A1;font-weight:bold; }
+.classTableRow46 { height: 26px }
+.classTablecol270
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl233 { color:#3838FF;font-weight:bold; }
+.classTablecol271
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTablecol272
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTablecol273
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTableRow47 { height: 25px }
+.classTablecol274
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl234 { color:#000000; }
+.classTablecol275
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl235 { color:#000000; }
+.classTablecol276
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl236 { color:#000000; }
+.classTablecol277
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl237 { color:#000000; }
+.classTableRow48 { height: 25px }
+.classTablecol278
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl238 { color:#000000; }
+.classTablecol279
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl239 { color:#000000; }
+.classTablecol280
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl240 { color:#000000; }
+.classTablecol281
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl241 { color:#000000; }
+.classTableRow49 { height: 25px }
+.classTablecol282
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl242 { color:#000000; }
+.classTablecol283
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl243 { color:#000000; }
+.classTablecol284
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl244 { color:#000000; }
+.classTablecol285
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl245 { color:#000000; }
+.classTableRow50 { height: 25px }
+.classTablecol286
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl246 { color:#000000; }
+.classTablecol287
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl247 { color:#000000; }
+.classTablecol288
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl248 { color:#000000; }
+.classTablecol289
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl249 { color:#000000; }
+.classTableRow51 { height: 7px }
+.classTablecol290
+{
+width:434px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol291
+{
+width:141px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol292
+{
+width:154px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol293
+{
+width:147px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTable17 { width: 916px; }
+.classTable18 { table-layout: fixed; }
+.classTablecol294 { width: 444px; }
+.classTablecol295 { width: 151px; }
+.classTablecol296 { width: 164px; }
+.classTablecol297 { width: 157px; }
+.classTableRow52 { height: 42px }
+.classTablecol298
+{
+width:906px; background-color:#000000; 
+vertical-align: top; text-align: left; padding-top:0.104167in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.104167in 
+}
+.classSpanTbl250 { color:#FFFFFF;font-weight:bold; }
+.classTableRow53 { height: 30px }
+.classTablecol299
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl251 { color:#A1A1A1;font-weight:bold; }
+.classTablecol300
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl252 { color:#A1A1A1;font-weight:bold; }
+.classTablecol301
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl253 { color:#A1A1A1;font-weight:bold; }
+.classTablecol302
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl254 { color:#A1A1A1;font-weight:bold; }
+.classTableRow54 { height: 26px }
+.classTablecol303
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl255 { color:#3838FF;font-weight:bold; }
+.classTablecol304
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTablecol305
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTablecol306
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classTableRow55 { height: 25px }
+.classTablecol307
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl256 { color:#000000; }
+.classTablecol308
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl257 { color:#000000; }
+.classTablecol309
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl258 { color:#000000; }
+.classTablecol310
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl259 { color:#000000; }
+.classTableRow56 { height: 25px }
+.classTablecol311
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl260 { color:#000000; }
+.classTablecol312
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl261 { color:#000000; }
+.classTablecol313
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl262 { color:#000000; }
+.classTablecol314
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl263 { color:#000000; }
+.classTableRow57 { height: 25px }
+.classTablecol315
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl264 { color:#000000; }
+.classTablecol316
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl265 { color:#000000; }
+.classTablecol317
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl266 { color:#000000; }
+.classTablecol318
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl267 { color:#000000; }
+.classTableRow58 { height: 25px }
+.classTablecol319
+{
+width:434px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl268 { color:#000000; }
+.classTablecol320
+{
+width:141px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl269 { color:#000000; }
+.classTablecol321
+{
+width:154px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl270 { color:#000000; }
+.classTablecol322
+{
+width:147px; 
+border-bottom: #C4C4C4 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl271 { color:#000000; }
+.classTableRow59 { height: 19px }
+.classTablecol323
+{
+width:434px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol324
+{
+width:141px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol325
+{
+width:154px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTablecol326
+{
+width:147px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classTable19 { width: 915px; }
+.classTable20 { table-layout: fixed;; border-top: #000000 1px solid; border-bottom: #000000 1px solid; border-left: #000000 1px solid; border-right: #000000 1px solid;  }
+.classTableRow60 { height: 186px }
+.classTablecol327
+{
+width:906px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl272 { color:#A1A1A1;font-weight:bold; }
+.classSpanTbl273 { color:#A1A1A1;font-weight:bold; }
+.classSpanTbl274 { color:#A1A1A1;font-weight:bold; }
+.classSpanTbl275 { color:#A1A1A1;font-weight:bold; }
+.classSpanTbl276 { color:#A1A1A1;font-weight:bold; }
+.classSpanTbl277 { color:#A1A1A1;font-weight:bold; }
+.classGridCell4 { text-align: center; vertical-align: middle; width: 935px }
+.classGridCell5 { display: inline-block }
+.classSpanTbx1 { color:#000000; }
+.classTextbox1 { width: 90px; height: 18px;  }
+.classGridCell6 { text-align: left; vertical-align: top; width: 935px }
+.classGridCell7 { display: inline-block }
+.classContainer3  { overflow: visible; }
+.classTable21 { width: 915px; }
+.classTable22 { table-layout: fixed; }
+.classTableRow61 { height: 36px }
+.classTablecol328
+{
+width:453px; 
+border-top: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: left; padding-top:0.135417in;padding-left:0.000000in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl278 { color:#A1A1A1; }
+.classTablecol329
+{
+width:453px; 
+border-top: #A1A1A1 1px solid; 
+vertical-align: bottom; text-align: right; padding-top:0.041667in;padding-left:0.052083in;padding-right:0.000000in;padding-bottom:0.052083in 
+}
+.classPara307  { text-align: right }
+.classSpanTbl279 { color:#0080FF; }
+.classGridCell8 { text-align: left; vertical-align: top; width: 935px }
+.classGridCell9 { display: inline-block }
+.classContainer4  { min-width: 935px; overflow: visible; }
+.classContainerChild14 {  padding: 0px 0px 10px 0px; }
+.classTable23 { width: 286px; }
+.classTable24 { table-layout: fixed; }
+.classTableRow62 { height: 26px }
+.classTablecol330
+{
+width:276px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl280 { color:#8F8F8F; }
+.classTableRow63 { height: 26px }
+.classTablecol331
+{
+width:276px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl281 { color:#8F8F8F; }
+.classTableRow64 { height: 26px }
+.classTablecol332
+{
+width:276px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl282 { color:#8F8F8F; }
+.classTableRow65 { height: 26px }
+.classTablecol333
+{
+width:276px; 
+border-bottom: #663399 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl283 { color:#8F8F8F; }
+.classContainerChild15 {  padding: 0px 0px 10px 0px; }
+.classTable25 { width: 286px; }
+.classTable26 { table-layout: fixed; }
+.classTableRow66 { height: 26px }
+.classTablecol334
+{
+width:133px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl284 { color:#8F8F8F; }
+.classTablecol335
+{
+width:133px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara313  { text-align: right }
+.classSpanTbl285 { color:#000000; }
+.classTableRow67 { height: 26px }
+.classTablecol336
+{
+width:133px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl286 { color:#8F8F8F; }
+.classTablecol337
+{
+width:133px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara315  { text-align: right }
+.classSpanTbl287 { color:#000000; }
+.classTableRow68 { height: 26px }
+.classTablecol338
+{
+width:133px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl288 { color:#8F8F8F; }
+.classTablecol339
+{
+width:133px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara317  { text-align: right }
+.classSpanTbl289 { color:#000000; }
+.classTableRow69 { height: 26px }
+.classTablecol340
+{
+width:133px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl290 { color:#8F8F8F; }
+.classSpanTbl291 { padding-left: 24px }
+.classTablecol341
+{
+width:133px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara319  { text-align: right }
+.classSpanTbl292 { color:#000000; }
+.classTableRow70 { height: 26px }
+.classTablecol342
+{
+width:133px; 
+border-bottom: #000000 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl293 { color:#8F8F8F; }
+.classSpanTbl294 { padding-left: 24px }
+.classTablecol343
+{
+width:133px; 
+border-bottom: #000000 2px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classPara321  { text-align: right }
+.classSpanTbl295 { color:#000000; }
+.classContainerChild16 {  padding: 0px 0px 10px 0px; }
+.classTable27 { width: 288px; }
+.classTable28 { table-layout: fixed; }
+.classTablecol344 { width: 96px; }
+.classTablecol345 { width: 96px; }
+.classTablecol346 { width: 96px; }
+.classTableRow71 { height: 26px }
+.classTablecol347
+{
+width:278px; 
+border-bottom: #DADADA 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl296 { color:#8F8F8F; }
+.classTableRow72 { height: 26px }
+.classTablecol348
+{
+width:278px; 
+border-bottom: #D9D9D9 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl297 { color:#8F8F8F; }
+.classTableRow73 { height: 26px }
+.classTablecol349
+{
+width:278px; 
+border-bottom: #800000 2px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl298 { color:#8F8F8F; }
+.classTable29 { width: 901px; }
+.classTable30 { table-layout: fixed; }
+.classTablecol350 { width: 187px; }
+.classTablecol351 { width: 92px; }
+.classTablecol352 { width: 203px; }
+.classTablecol353 { width: 130px; }
+.classTablecol354 { width: 201px; }
+.classTablecol355 { width: 87px; }
+.classTableRow74 { height: 32px }
+.classTablecol356
+{
+width:890px; 
+vertical-align: top; text-align: left; padding-top:0.104167in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.000000in 
+}
+.classSpanTbl299 { color:#000000;font-weight:bold; }
+.classTableRow75 { height: 67px }
+.classTablecol357
+{
+width:890px; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.000000in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.093750in 
+}
+.classSpanTbl300 { color:#000000; }
+.classTableRow76 { height: 48px }
+.classTablecol358
+{
+width:178px; 
+border-left: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl301 { color:#000000; }
+.classSpanTbl302 { padding-left: 24px }
+.classTablecol359
+{
+width:82px; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classPara328  { text-align: right }
+.classSpanTbl303 { color:#000000; }
+.classTablecol360
+{
+width:193px; 
+border-left: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl304 { color:#000000; }
+.classSpanTbl305 { padding-left: 24px }
+.classSpanTbl306 { padding-left: 24px }
+.classSpanTbl307 { padding-left: 24px }
+.classSpanTbl308 { padding-left: 24px }
+.classSpanTbl309 { padding-left: 24px }
+.classSpanTbl310 { padding-left: 24px }
+.classSpanTbl311 { padding-left: 24px }
+.classTablecol361
+{
+width:120px; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classPara330  { text-align: right }
+.classSpanTbl312 { color:#000000; }
+.classTablecol362
+{
+width:192px; 
+border-left: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl313 { color:#000000; }
+.classSpanTbl314 { padding-left: 24px }
+.classTablecol363
+{
+width:77px; 
+border-right: #000000 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.041667in;padding-bottom:0.052083in 
+}
+.classPara332  { text-align: right }
+.classSpanTbl315 { color:#000000; }
+.classTableRow77 { height: 48px }
+.classTablecol364
+{
+width:178px; 
+border-left: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl316 { color:#000000; }
+.classSpanTbl317 { padding-left: 24px }
+.classTablecol365
+{
+width:82px; 
+border-right: #000000 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.041667in;padding-bottom:0.052083in 
+}
+.classPara334  { text-align: right }
+.classSpanTbl318 { color:#000000; }
+.classTablecol366
+{
+width:323px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl319 { color:#000000; }
+.classTablecol367
+{
+width:192px; 
+border-left: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl320 { color:#000000; }
+.classSpanTbl321 { padding-left: 24px }
+.classTablecol368
+{
+width:77px; 
+border-right: #000000 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.041667in;padding-bottom:0.052083in 
+}
+.classPara337  { text-align: right }
+.classSpanTbl322 { color:#000000; }
+.classTableRow78 { height: 48px }
+.classTablecol369
+{
+width:178px; 
+border-left: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl323 { color:#000000; }
+.classSpanTbl324 { padding-left: 24px }
+.classTablecol370
+{
+width:82px; 
+border-right: #000000 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.041667in;padding-bottom:0.052083in 
+}
+.classPara339  { text-align: right }
+.classSpanTbl325 { color:#000000; }
+.classTablecol371
+{
+width:323px; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl326 { color:#000000; }
+.classTablecol372
+{
+width:192px; 
+border-left: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.052083in 
+}
+.classSpanTbl327 { color:#000000; }
+.classSpanTbl328 { padding-left: 24px }
+.classTablecol373
+{
+width:77px; 
+border-right: #000000 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.041667in;padding-bottom:0.052083in 
+}
+.classPara342  { text-align: right }
+.classSpanTbl329 { color:#000000; }
+.classTableRow79 { height: 67px }
+.classTablecol374
+{
+width:178px; 
+border-left: #000000 1px solid; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl330 { color:#000000; }
+.classSpanTbl331 { padding-left: 24px }
+.classTablecol375
+{
+width:82px; 
+border-right: #000000 1px solid; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara344  { text-align: right }
+.classSpanTbl332 { color:#000000; }
+.classTablecol376
+{
+width:323px; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl333 { color:#000000; }
+.classTablecol377
+{
+width:192px; 
+border-left: #000000 1px solid; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: left; padding-top:0.052083in;padding-left:0.041667in;padding-right:0.052083in;padding-bottom:0.041667in 
+}
+.classSpanTbl334 { color:#000000; }
+.classSpanTbl335 { padding-left: 24px }
+.classTablecol378
+{
+width:77px; 
+border-right: #000000 1px solid; 
+border-bottom: #000000 1px solid; 
+vertical-align: top; text-align: right; padding-top:0.052083in;padding-left:0.052083in;padding-right:0.041667in;padding-bottom:0.041667in 
+}
+.classPara347  { text-align: right }
+.classSpanTbl336 { color:#000000; }
+-->
+</style>
+</head>
+<body>
+<table id="ex-container1" class="classContainer1 JANE container gridLayout">
+<tr class="gridLayoutRow">
+<td id="ex-gridCell1" class="classGridCell1 gridLayoutCell"></td>
+</tr>
+<tr class="gridLayoutRow">
+<td id="ex-gridCell2" class="classGridCell2 gridLayoutCell">
+<div id="ex-gridCell3" class="classGridCell3">
+<div id="ex-container2" class="classContainer2 container verticalSpan">
+<div id="ex-containerChild1" class="classContainerChild1 verticalSpanChild">
+<div id="ex-table1" class="tablename classTable1">
+<table id="overview" class="classTable2">
+<col id="ex-tablecol1" class="classTablecol1">
+<col id="ex-tablecol2" class="classTablecol2">
+<col id="ex-tablecol3" class="classTablecol3">
+<tr id="ex-tableRow1" class="classTableRow1">
+<td id="ex-tablecol4" class="classTablecol4" colspan="2">
+<p class="classPara1 para" id="ex-para1">
+<span id="ex-spanTbl1" class="tablename classSpanTbl1 text1021">A guide to key terms</span>
+</p>
+</td><td id="ex-tablecol5" class="classTablecol5">
+<p class="classPara2 para" id="ex-para2"></p>
+</td>
+</tr>
+<tr id="ex-tableRow2" class="classTableRow2">
+<td id="ex-tablecol6" class="classTablecol6">
+<p class="classPara3 para" id="ex-para3">
+<span id="ex-spanTbl2" class="tablename classSpanTbl2 text56">Term</span>
+</p>
+</td><td id="ex-tablecol7" class="classTablecol7">
+<p class="classPara4 para" id="ex-para4">
+<span id="ex-spanTbl3" class="tablename classSpanTbl3 text56">ThisMeans</span>
+</p>
+</td><td id="ex-tablecol8" class="classTablecol8">
+<p class="classPara5 para" id="ex-para5">
+<span id="ex-spanTbl4" class="tablename classSpanTbl4 text56">YourTotals</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow3" class="classTableRow3">
+<td id="ex-tablecol9" class="classTablecol9">
+<p class="classPara6 para" id="ex-para6">
+<span id="ex-spanTbl5" class="tablename classSpanTbl5 text273">Amount Billed:</span>
+</p>
+</td><td id="ex-tablecol10" class="classTablecol10">
+<p class="classPara7 para" id="ex-para7">
+<span id="ex-spanTbl6" class="tablename classSpanTbl6 text273">The amount your doctor or health care provider billed for services.</span>
+</p>
+</td><td id="ex-tablecol11" class="classTablecol11">
+<p class="classPara8 para" id="ex-para8">
+<span id="ex-spanTbl7" class="tablename classSpanTbl7 text273">$539.00</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow4" class="classTableRow4">
+<td id="ex-tablecol12" class="classTablecol12">
+<p class="classPara9 para" id="ex-para9">
+<span id="ex-spanTbl8" class="tablename classSpanTbl8 text273">Member rate:</span>
+</p>
+</td><td id="ex-tablecol13" class="classTablecol13">
+<p class="classPara10 para" id="ex-para10">
+<span id="ex-spanTbl9" class="tablename classSpanTbl9 text273">The agreed upon amount the in-network doctor or health care provider accepts as their fee.</span>
+</p>
+</td><td id="ex-tablecol14" class="classTablecol14">
+<p class="classPara11 para" id="ex-para11">
+<span id="ex-spanTbl10" class="tablename classSpanTbl10 text273">$244.88</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow5" class="classTableRow5">
+<td id="ex-tablecol15" class="classTablecol15">
+<p class="classPara12 para" id="ex-para12">
+<span id="ex-spanTbl11" class="tablename classSpanTbl11 text273">Amount you saved:</span>
+</p>
+</td><td id="ex-tablecol16" class="classTablecol16">
+<p class="classPara13 para" id="ex-para13">
+<span id="ex-spanTbl12" class="tablename classSpanTbl12 text273">The difference between the amount billed and the in-network arranged pricing.</span>
+</p>
+</td><td id="ex-tablecol17" class="classTablecol17">
+<p class="classPara14 para" id="ex-para14">
+<span id="ex-spanTbl13" class="tablename classSpanTbl13 text273">$294.12</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow6" class="classTableRow6">
+<td id="ex-tablecol18" class="classTablecol18">
+<p class="classPara15 para" id="ex-para15">
+<span id="ex-spanTbl14" class="tablename classSpanTbl14 text273">Pending or not payable:</span>
+</p>
+</td><td id="ex-tablecol19" class="classTablecol19">
+<p class="classPara16 para" id="ex-para16">
+<span id="ex-spanTbl15" class="tablename classSpanTbl15 text273">A claim that needs more review by us or an amount we did not pay. You may or may not have to $0.00 pay this.</span>
+</p>
+</td><td id="ex-tablecol20" class="classTablecol20">
+<p class="classPara17 para" id="ex-para17">
+<span id="ex-spanTbl16" class="tablename classSpanTbl16 text273">$0</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow7" class="classTableRow7">
+<td id="ex-tablecol21" class="classTablecol21">
+<p class="classPara18 para" id="ex-para18">
+<span id="ex-spanTbl17" class="tablename classSpanTbl17 text273">Deductible:</span>
+</p>
+</td><td id="ex-tablecol22" class="classTablecol22">
+<p class="classPara19 para" id="ex-para19">
+<span id="ex-spanTbl18" class="tablename classSpanTbl18 text273">The amount you pay before your health plan will pay benefits.</span>
+</p>
+</td><td id="ex-tablecol23" class="classTablecol23">
+<p class="classPara20 para" id="ex-para20">
+<span id="ex-spanTbl19" class="tablename classSpanTbl19 text273">$0</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow8" class="classTableRow8">
+<td id="ex-tablecol24" class="classTablecol24">
+<p class="classPara21 para" id="ex-para21">
+<span id="ex-spanTbl20" class="tablename classSpanTbl20 text273">Coinsurance:</span>
+</p>
+</td><td id="ex-tablecol25" class="classTablecol25">
+<p class="classPara22 para" id="ex-para22">
+<span id="ex-spanTbl21" class="tablename classSpanTbl21 text273">When you pay part of the bill and we pay part of the bill. Some plans do not have coinsurance.</span>
+</p>
+</td><td id="ex-tablecol26" class="classTablecol26">
+<p class="classPara23 para" id="ex-para23">
+<span id="ex-spanTbl22" class="tablename classSpanTbl22 text273">$0</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow9" class="classTableRow9">
+<td id="ex-tablecol27" class="classTablecol27">
+<p class="classPara24 para" id="ex-para24">
+<span id="ex-spanTbl23" class="tablename classSpanTbl23 text273">Copay:</span>
+</p>
+</td><td id="ex-tablecol28" class="classTablecol28">
+<p class="classPara25 para" id="ex-para25">
+<span id="ex-spanTbl24" class="tablename classSpanTbl24 text273">A fixed dollar amount you pay when you visit a doctor or other health care provider.</span>
+</p>
+</td><td id="ex-tablecol29" class="classTablecol29">
+<p class="classPara26 para" id="ex-para26">
+<span id="ex-spanTbl25" class="tablename classSpanTbl25 text273">$0</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow10" class="classTableRow10">
+<td id="ex-tablecol30" class="classTablecol30">
+<p class="classPara27 para" id="ex-para27"></p>
+</td><td id="ex-tablecol31" class="classTablecol31">
+<p class="classPara28 para" id="ex-para28"></p>
+</td><td id="ex-tablecol32" class="classTablecol32">
+<p class="classPara29 para" id="ex-para29"></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild2" class="classContainerChild2 verticalSpanChild">
+<div id="overview2" class="classAddin3">
+<svg width="915" viewBox="0 0 915 230" id="chartSVG3" class="chartSVG-class"></svg>
+</div>
+</div>
+<div id="ex-containerChild3" class="classContainerChild3 verticalSpanChild">
+<div id="ex-table3" class="classTable3">
+<table id="overview3" class="classTable4">
+<tr id="ex-tableRow11" class="classTableRow11">
+<td id="ex-tablecol33" class="classTablecol33">
+<p class="classPara30 para" id="ex-para30">
+<span id="ex-spanTbl26" class="classSpanTbl26 text43">
+<br>
+</span>
+</p>
+<p class="classPara31 para" id="ex-para31">
+<span id="ex-spanTbl27" class="classSpanTbl27 text296">Stay</span><span id="ex-spanTbl28" class="classSpanTbl28 text43">&nbsp;</span><span id="ex-spanTbl29" class="classSpanTbl29 text296">healthy</span>
+</p>
+<p class="classPara32 para" id="ex-para32">
+<span id="ex-spanTbl30" class="classSpanTbl30 text57">
+<br>
+</span>
+</p>
+<p class="classPara33 para" id="ex-para33">
+<span id="ex-spanTbl31" class="classSpanTbl31 text57">W</span><span id="ex-spanTbl32" class="classSpanTbl32 text273">hen you visit your doctor, be prepared with the questions you want to ask. Write them down and bring them with you. Ask about tests, medications and next steps you need to take over the next year.</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild4" class="classContainerChild4 verticalSpanChild">
+<div id="ex-table5" class="classTable5">
+<table id="payment1" class="classTable6">
+<col id="ex-tablecol34" class="classTablecol34">
+<col id="ex-tablecol35" class="classTablecol35">
+<col id="ex-tablecol36" class="classTablecol36">
+<col id="ex-tablecol37" class="classTablecol37">
+<col id="ex-tablecol38" class="classTablecol38">
+<col id="ex-tablecol39" class="classTablecol39">
+<tr id="ex-tableRow12" class="classTableRow12">
+<td id="ex-tablecol40" class="classTablecol40" colspan="6">
+<p class="classPara34 para" id="ex-para34">
+<span id="ex-spanTbl33" class="classSpanTbl33 text59">Your Payment</span><span id="ex-spanTbl34" class="classSpanTbl34 text673"> </span><span id="ex-spanTbl35" class="classSpanTbl35 text59">Summary</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow13" class="classTableRow13">
+<td id="ex-tablecol41" class="classTablecol41" colspan="5">
+<p class="classPara35 para" id="ex-para35">
+<span id="ex-spanTbl36" class="classSpanTbl36 text55">Your Plan Paid</span>
+</p>
+</td><td id="ex-tablecol42" class="classTablecol42">
+<p class="classPara36 para" id="ex-para36">
+<span id="ex-spanTbl37" class="classSpanTbl37 text55">You Owe or Already Paid</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow14" class="classTableRow14">
+<td id="ex-tablecol43" class="classTablecol43">
+<p class="classPara37 para" id="ex-para37">
+<span id="ex-spanTbl38" class="classSpanTbl38 text55">Patient</span>
+</p>
+</td><td id="ex-tablecol44" class="classTablecol44">
+<p class="classPara38 para" id="ex-para38">
+<span id="ex-spanTbl39" class="classSpanTbl39 text55">Provider</span>
+</p>
+</td><td id="ex-tablecol45" class="classTablecol45">
+<p class="classPara39 para" id="ex-para39">
+<span id="ex-spanTbl40" class="classSpanTbl40 text55">Amount</span>
+</p>
+</td><td id="ex-tablecol46" class="classTablecol46">
+<p class="classPara40 para" id="ex-para40">
+<span id="ex-spanTbl41" class="classSpanTbl41 text55">SentTo</span>
+</p>
+</td><td id="ex-tablecol47" class="classTablecol47">
+<p class="classPara41 para" id="ex-para41">
+<span id="ex-spanTbl42" class="classSpanTbl42 text55">SendDate</span>
+</p>
+</td><td id="ex-tablecol48" class="classTablecol48">
+<p class="classPara42 para" id="ex-para42">
+<span id="ex-spanTbl43" class="classSpanTbl43 text55">AmountOwed</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow15" class="classTableRow15">
+<td id="ex-tablecol49" class="classTablecol49">
+<p class="classPara43 para" id="ex-para43">
+<span id="ex-spanTbl44" class="classSpanTbl44 text44">Mike (Dependent)</span>
+</p>
+</td><td id="ex-tablecol50" class="classTablecol50">
+<p class="classPara44 para" id="ex-para44">
+<span id="ex-spanTbl45" class="classSpanTbl45 text44">Doctor Office</span>
+</p>
+</td><td id="ex-tablecol51" class="classTablecol51">
+<p class="classPara45 para" id="ex-para45">
+<span id="ex-spanTbl46" class="classSpanTbl46 text44">245</span>
+</p>
+</td><td id="ex-tablecol52" class="classTablecol52">
+<p class="classPara46 para" id="ex-para46">
+<span id="ex-spanTbl47" class="classSpanTbl47 text44">Doctor Office</span>
+</p>
+</td><td id="ex-tablecol53" class="classTablecol53">
+<p class="classPara47 para" id="ex-para47">
+<span id="ex-spanTbl48" class="classSpanTbl48 text44">02/23/2019</span>
+</p>
+</td><td id="ex-tablecol54" class="classTablecol54">
+<p class="classPara48 para" id="ex-para48">
+<span id="ex-spanTbl49" class="classSpanTbl49 text44">0.00</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow16" class="classTableRow16">
+<td id="ex-tablecol55" class="classTablecol55">
+<p class="classPara49 para" id="ex-para49">
+<span id="ex-spanTbl50" class="classSpanTbl50 text44">Jane (Self)</span>
+</p>
+</td><td id="ex-tablecol56" class="classTablecol56">
+<p class="classPara50 para" id="ex-para50">
+<span id="ex-spanTbl51" class="classSpanTbl51 text44">Doctor Office</span>
+</p>
+</td><td id="ex-tablecol57" class="classTablecol57">
+<p class="classPara51 para" id="ex-para51">
+<span id="ex-spanTbl52" class="classSpanTbl52 text44">244</span>
+</p>
+</td><td id="ex-tablecol58" class="classTablecol58">
+<p class="classPara52 para" id="ex-para52">
+<span id="ex-spanTbl53" class="classSpanTbl53 text44">Doctor Office</span>
+</p>
+</td><td id="ex-tablecol59" class="classTablecol59">
+<p class="classPara53 para" id="ex-para53">
+<span id="ex-spanTbl54" class="classSpanTbl54 text44">02/23/2019</span>
+</p>
+</td><td id="ex-tablecol60" class="classTablecol60">
+<p class="classPara54 para" id="ex-para54">
+<span id="ex-spanTbl55" class="classSpanTbl55 text44">0.00</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow17" class="classTableRow17">
+<td id="ex-tablecol61" class="classTablecol61">
+<p class="classPara55 para" id="ex-para55">
+<span id="ex-spanTbl56" class="classSpanTbl56 text44">John (Dependent)</span>
+</p>
+</td><td id="ex-tablecol62" class="classTablecol62">
+<p class="classPara56 para" id="ex-para56">
+<span id="ex-spanTbl57" class="classSpanTbl57 text44">Doctor Office</span>
+</p>
+</td><td id="ex-tablecol63" class="classTablecol63">
+<p class="classPara57 para" id="ex-para57">
+<span id="ex-spanTbl58" class="classSpanTbl58 text44">246</span>
+</p>
+</td><td id="ex-tablecol64" class="classTablecol64">
+<p class="classPara58 para" id="ex-para58">
+<span id="ex-spanTbl59" class="classSpanTbl59 text44">Doctor Office</span>
+</p>
+</td><td id="ex-tablecol65" class="classTablecol65">
+<p class="classPara59 para" id="ex-para59">
+<span id="ex-spanTbl60" class="classSpanTbl60 text44">02/23/2019</span>
+</p>
+</td><td id="ex-tablecol66" class="classTablecol66">
+<p class="classPara60 para" id="ex-para60">
+<span id="ex-spanTbl61" class="classSpanTbl61 text44">130</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow18" class="classTableRow18">
+<td id="ex-tablecol67" class="classTablecol67">
+<p class="classPara61 para" id="ex-para61">
+<span id="ex-spanTbl62" class="classSpanTbl62 text55">Total:</span>
+</p>
+<p class="classPara62 para" id="ex-para62"></p>
+</td><td id="ex-tablecol68" class="classTablecol68">
+<p class="classPara63 para" id="ex-para63"></p>
+</td><td id="ex-tablecol69" class="classTablecol69">
+<p class="classPara64 para" id="ex-para64"></p>
+</td><td id="ex-tablecol70" class="classTablecol70">
+<p class="classPara65 para" id="ex-para65"></p>
+</td><td id="ex-tablecol71" class="classTablecol71">
+<p class="classPara66 para" id="ex-para66"></p>
+</td><td id="ex-tablecol72" class="classTablecol72">
+<p class="classPara67 para" id="ex-para67"></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild5" class="classContainerChild5 verticalSpanChild">
+<div id="payment2" class="classAddin1">
+<svg width="917" viewBox="0 0 917 221" id="chartSVG1" class="chartSVG-class"></svg>
+</div>
+</div>
+<div id="ex-containerChild6" class="classContainerChild6 verticalSpanChild">
+<div id="ex-table7" class="classTable7">
+<table id="claims1" class="classTable8">
+<col id="ex-tablecol73" class="classTablecol73">
+<col id="ex-tablecol74" class="classTablecol74">
+<col id="ex-tablecol75" class="classTablecol75">
+<col id="ex-tablecol76" class="classTablecol76">
+<col id="ex-tablecol77" class="classTablecol77">
+<col id="ex-tablecol78" class="classTablecol78">
+<col id="ex-tablecol79" class="classTablecol79">
+<col id="ex-tablecol80" class="classTablecol80">
+<col id="ex-tablecol81" class="classTablecol81">
+<col id="ex-tablecol82" class="classTablecol82">
+<tr id="ex-tableRow19" class="classTableRow19">
+<td id="ex-tablecol83" class="classTablecol83" colspan="10">
+<p class="classPara68 para" id="ex-para68">
+<span id="ex-spanTbl63" class="classSpanTbl63 text59">Your claims up close</span>
+</p>
+<p class="classPara69 para" id="ex-para69"></p>
+</td>
+</tr>
+<tr id="ex-tableRow20" class="classTableRow20">
+<td id="ex-tablecol84" class="classTablecol84" colspan="10">
+<p class="classPara70 para" id="ex-para70">
+<span id="ex-spanTbl64" class="classSpanTbl64 text58">Claim for Mike (Dependent)</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow21" class="classTableRow21">
+<td id="ex-tablecol85" class="classTablecol85">
+<p class="classPara71 para" id="ex-para71">
+<span id="ex-spanTbl65" class="classSpanTbl65 text44">Claim ID: 345678</span>
+</p>
+<p class="classPara72 para" id="ex-para72">
+<span id="ex-spanTbl66" class="classSpanTbl66 text44">Received on: 02/11/2019</span>
+</p>
+</td><td id="ex-tablecol86" class="classTablecol86">
+<p class="classPara73 para" id="ex-para73">
+<span id="ex-spanTbl67" class="classSpanTbl67 text44">Amount </span>
+</p>
+<p class="classPara74 para" id="ex-para74">
+<span id="ex-spanTbl68" class="classSpanTbl68 text44">Billed</span>
+</p>
+</td><td id="ex-tablecol87" class="classTablecol87">
+<p class="classPara75 para" id="ex-para75">
+<span id="ex-spanTbl69" class="classSpanTbl69 text44">Member Rate</span>
+</p>
+</td><td id="ex-tablecol88" class="classTablecol88">
+<p class="classPara76 para" id="ex-para76">
+<span id="ex-spanTbl70" class="classSpanTbl70 text44">Pending or </span>
+</p>
+<p class="classPara77 para" id="ex-para77">
+<span id="ex-spanTbl71" class="classSpanTbl71 text44">Not Payable</span>
+</p>
+</td><td id="ex-tablecol89" class="classTablecol89">
+<p class="classPara78 para" id="ex-para78">
+<span id="ex-spanTbl72" class="classSpanTbl72 text44">Applied to</span>
+</p>
+<p class="classPara79 para" id="ex-para79">
+<span id="ex-spanTbl73" class="classSpanTbl73 text44">Deductible</span>
+</p>
+</td><td id="ex-tablecol90" class="classTablecol90">
+<p class="classPara80 para" id="ex-para80">
+<span id="ex-spanTbl74" class="classSpanTbl74 text44">Copay</span>
+</p>
+</td><td id="ex-tablecol91" class="classTablecol91">
+<p class="classPara81 para" id="ex-para81">
+<span id="ex-spanTbl75" class="classSpanTbl75 text44">Amount</span>
+</p>
+<p class="classPara82 para" id="ex-para82">
+<span id="ex-spanTbl76" class="classSpanTbl76 text44">remaining</span>
+</p>
+</td><td id="ex-tablecol92" class="classTablecol92">
+<p class="classPara83 para" id="ex-para83">
+<span id="ex-spanTbl77" class="classSpanTbl77 text44">Plan Pays</span>
+</p>
+</td><td id="ex-tablecol93" class="classTablecol93">
+<p class="classPara84 para" id="ex-para84">
+<span id="ex-spanTbl78" class="classSpanTbl78 text44">Your coinsurance</span>
+</p>
+</td><td id="ex-tablecol94" class="classTablecol94">
+<p class="classPara85 para" id="ex-para85">
+<span id="ex-spanTbl79" class="classSpanTbl79 text44">You may owe</span>
+</p>
+<p class="classPara86 para" id="ex-para86">
+<span id="ex-spanTbl80" class="classSpanTbl80 text44">C+D+E+H=I</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow22" class="classTableRow22">
+<td id="ex-tablecol95" class="classTablecol95">
+<p class="classPara87 para" id="ex-para87">
+<span id="ex-spanTbl81" class="classSpanTbl81 text55">Details EXAM OF LOWER</span>
+</p>
+</td><td id="ex-tablecol96" class="classTablecol96">
+<p class="classPara88 para" id="ex-para88">
+<span id="ex-spanTbl82" class="classSpanTbl82 text44">$270</span>
+</p>
+</td><td id="ex-tablecol97" class="classTablecol97">
+<p class="classPara89 para" id="ex-para89">
+<span id="ex-spanTbl83" class="classSpanTbl83 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol98" class="classTablecol98">
+<p class="classPara90 para" id="ex-para90">
+<span id="ex-spanTbl84" class="classSpanTbl84 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol99" class="classTablecol99">
+<p class="classPara91 para" id="ex-para91">
+<span id="ex-spanTbl85" class="classSpanTbl85 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol100" class="classTablecol100">
+<p class="classPara92 para" id="ex-para92">
+<span id="ex-spanTbl86" class="classSpanTbl86 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol101" class="classTablecol101">
+<p class="classPara93 para" id="ex-para93">
+<span id="ex-spanTbl87" class="classSpanTbl87 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol102" class="classTablecol102">
+<p class="classPara94 para" id="ex-para94">
+<span id="ex-spanTbl88" class="classSpanTbl88 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol103" class="classTablecol103">
+<p class="classPara95 para" id="ex-para95">
+<span id="ex-spanTbl89" class="classSpanTbl89 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol104" class="classTablecol104">
+<p class="classPara96 para" id="ex-para96">
+<span id="ex-spanTbl90" class="classSpanTbl90 text44">$</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow23" class="classTableRow23">
+<td id="ex-tablecol105" class="classTablecol105">
+<p class="classPara97 para" id="ex-para97">
+<span id="ex-spanTbl91" class="classSpanTbl91 text55">Details EXAM NECK SPINE</span>
+</p>
+</td><td id="ex-tablecol106" class="classTablecol106">
+<p class="classPara98 para" id="ex-para98">
+<span id="ex-spanTbl92" class="classSpanTbl92 text44">$269</span>
+</p>
+</td><td id="ex-tablecol107" class="classTablecol107">
+<p class="classPara99 para" id="ex-para99">
+<span id="ex-spanTbl93" class="classSpanTbl93 text44">$121.57</span>
+</p>
+</td><td id="ex-tablecol108" class="classTablecol108">
+<p class="classPara100 para" id="ex-para100">
+<span id="ex-spanTbl94" class="classSpanTbl94 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol109" class="classTablecol109">
+<p class="classPara101 para" id="ex-para101">
+<span id="ex-spanTbl95" class="classSpanTbl95 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol110" class="classTablecol110">
+<p class="classPara102 para" id="ex-para102">
+<span id="ex-spanTbl96" class="classSpanTbl96 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol111" class="classTablecol111">
+<p class="classPara103 para" id="ex-para103">
+<span id="ex-spanTbl97" class="classSpanTbl97 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol112" class="classTablecol112">
+<p class="classPara104 para" id="ex-para104">
+<span id="ex-spanTbl98" class="classSpanTbl98 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol113" class="classTablecol113">
+<p class="classPara105 para" id="ex-para105">
+<span id="ex-spanTbl99" class="classSpanTbl99 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol114" class="classTablecol114">
+<p class="classPara106 para" id="ex-para106">
+<span id="ex-spanTbl100" class="classSpanTbl100 text44">$</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow24" class="classTableRow24">
+<td id="ex-tablecol115" class="classTablecol115">
+<p class="classPara107 para" id="ex-para107">
+<span id="ex-spanTbl101" class="classSpanTbl101 text55">Totals:</span>
+</p>
+</td><td id="ex-tablecol116" class="classTablecol116">
+<p class="classPara108 para" id="ex-para108">
+<span id="ex-spanTbl102" class="classSpanTbl102 text44">$5678</span>
+</p>
+</td><td id="ex-tablecol117" class="classTablecol117">
+<p class="classPara109 para" id="ex-para109">
+<span id="ex-spanTbl103" class="classSpanTbl103 text44">$4567</span>
+</p>
+</td><td id="ex-tablecol118" class="classTablecol118">
+<p class="classPara110 para" id="ex-para110">
+<span id="ex-spanTbl104" class="classSpanTbl104 text44">$3333</span>
+</p>
+</td><td id="ex-tablecol119" class="classTablecol119">
+<p class="classPara111 para" id="ex-para111">
+<span id="ex-spanTbl105" class="classSpanTbl105 text44">$5555</span>
+</p>
+</td><td id="ex-tablecol120" class="classTablecol120">
+<p class="classPara112 para" id="ex-para112">
+<span id="ex-spanTbl106" class="classSpanTbl106 text44">$67890</span>
+</p>
+</td><td id="ex-tablecol121" class="classTablecol121">
+<p class="classPara113 para" id="ex-para113">
+<span id="ex-spanTbl107" class="classSpanTbl107 text44">$67458</span>
+</p>
+</td><td id="ex-tablecol122" class="classTablecol122">
+<p class="classPara114 para" id="ex-para114">
+<span id="ex-spanTbl108" class="classSpanTbl108 text44">$34567</span>
+</p>
+</td><td id="ex-tablecol123" class="classTablecol123">
+<p class="classPara115 para" id="ex-para115">
+<span id="ex-spanTbl109" class="classSpanTbl109 text44">$4444</span>
+</p>
+</td><td id="ex-tablecol124" class="classTablecol124">
+<p class="classPara116 para" id="ex-para116">
+<span id="ex-spanTbl110" class="classSpanTbl110 text44">$777</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild7" class="classContainerChild7 verticalSpanChild">
+<div id="ex-table9" class="classTable9">
+<table id="claims2" class="classTable10">
+<col id="ex-tablecol125" class="classTablecol125">
+<col id="ex-tablecol126" class="classTablecol126">
+<col id="ex-tablecol127" class="classTablecol127">
+<col id="ex-tablecol128" class="classTablecol128">
+<col id="ex-tablecol129" class="classTablecol129">
+<col id="ex-tablecol130" class="classTablecol130">
+<col id="ex-tablecol131" class="classTablecol131">
+<col id="ex-tablecol132" class="classTablecol132">
+<col id="ex-tablecol133" class="classTablecol133">
+<col id="ex-tablecol134" class="classTablecol134">
+<tr id="ex-tableRow25" class="classTableRow25">
+<td id="ex-tablecol135" class="classTablecol135" colspan="10">
+<p class="classPara117 para" id="ex-para117">
+<span id="ex-spanTbl111" class="classSpanTbl111 text58">Claim for Jane (Self)</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow26" class="classTableRow26">
+<td id="ex-tablecol136" class="classTablecol136">
+<p class="classPara118 para" id="ex-para118">
+<span id="ex-spanTbl112" class="classSpanTbl112 text44">Claim ID: 345678</span>
+</p>
+<p class="classPara119 para" id="ex-para119">
+<span id="ex-spanTbl113" class="classSpanTbl113 text44">Received on: 02/11/2019</span>
+</p>
+</td><td id="ex-tablecol137" class="classTablecol137">
+<p class="classPara120 para" id="ex-para120">
+<span id="ex-spanTbl114" class="classSpanTbl114 text44">Amount </span>
+</p>
+<p class="classPara121 para" id="ex-para121">
+<span id="ex-spanTbl115" class="classSpanTbl115 text44">Billed</span>
+</p>
+</td><td id="ex-tablecol138" class="classTablecol138">
+<p class="classPara122 para" id="ex-para122">
+<span id="ex-spanTbl116" class="classSpanTbl116 text44">Member Rate</span>
+</p>
+</td><td id="ex-tablecol139" class="classTablecol139">
+<p class="classPara123 para" id="ex-para123">
+<span id="ex-spanTbl117" class="classSpanTbl117 text44">Pending or </span>
+</p>
+<p class="classPara124 para" id="ex-para124">
+<span id="ex-spanTbl118" class="classSpanTbl118 text44">Not Payable</span>
+</p>
+</td><td id="ex-tablecol140" class="classTablecol140">
+<p class="classPara125 para" id="ex-para125">
+<span id="ex-spanTbl119" class="classSpanTbl119 text44">Applied to</span>
+</p>
+<p class="classPara126 para" id="ex-para126">
+<span id="ex-spanTbl120" class="classSpanTbl120 text44">Deductible</span>
+</p>
+</td><td id="ex-tablecol141" class="classTablecol141">
+<p class="classPara127 para" id="ex-para127">
+<span id="ex-spanTbl121" class="classSpanTbl121 text44">Copay</span>
+</p>
+</td><td id="ex-tablecol142" class="classTablecol142">
+<p class="classPara128 para" id="ex-para128">
+<span id="ex-spanTbl122" class="classSpanTbl122 text44">Amount</span>
+</p>
+<p class="classPara129 para" id="ex-para129">
+<span id="ex-spanTbl123" class="classSpanTbl123 text44">remaining</span>
+</p>
+</td><td id="ex-tablecol143" class="classTablecol143">
+<p class="classPara130 para" id="ex-para130">
+<span id="ex-spanTbl124" class="classSpanTbl124 text44">Plan Pays</span>
+</p>
+</td><td id="ex-tablecol144" class="classTablecol144">
+<p class="classPara131 para" id="ex-para131">
+<span id="ex-spanTbl125" class="classSpanTbl125 text44">Your coinsurance</span>
+</p>
+</td><td id="ex-tablecol145" class="classTablecol145">
+<p class="classPara132 para" id="ex-para132">
+<span id="ex-spanTbl126" class="classSpanTbl126 text44">You may owe</span>
+</p>
+<p class="classPara133 para" id="ex-para133">
+<span id="ex-spanTbl127" class="classSpanTbl127 text44">C+D+E+H=I</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow27" class="classTableRow27">
+<td id="ex-tablecol146" class="classTablecol146">
+<p class="classPara134 para" id="ex-para134">
+<span id="ex-spanTbl128" class="classSpanTbl128 text55">Details EXAM OF LOWER</span>
+</p>
+</td><td id="ex-tablecol147" class="classTablecol147">
+<p class="classPara135 para" id="ex-para135">
+<span id="ex-spanTbl129" class="classSpanTbl129 text44">$270</span>
+</p>
+</td><td id="ex-tablecol148" class="classTablecol148">
+<p class="classPara136 para" id="ex-para136">
+<span id="ex-spanTbl130" class="classSpanTbl130 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol149" class="classTablecol149">
+<p class="classPara137 para" id="ex-para137">
+<span id="ex-spanTbl131" class="classSpanTbl131 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol150" class="classTablecol150">
+<p class="classPara138 para" id="ex-para138">
+<span id="ex-spanTbl132" class="classSpanTbl132 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol151" class="classTablecol151">
+<p class="classPara139 para" id="ex-para139">
+<span id="ex-spanTbl133" class="classSpanTbl133 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol152" class="classTablecol152">
+<p class="classPara140 para" id="ex-para140">
+<span id="ex-spanTbl134" class="classSpanTbl134 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol153" class="classTablecol153">
+<p class="classPara141 para" id="ex-para141">
+<span id="ex-spanTbl135" class="classSpanTbl135 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol154" class="classTablecol154">
+<p class="classPara142 para" id="ex-para142">
+<span id="ex-spanTbl136" class="classSpanTbl136 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol155" class="classTablecol155">
+<p class="classPara143 para" id="ex-para143">
+<span id="ex-spanTbl137" class="classSpanTbl137 text44">$</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow28" class="classTableRow28">
+<td id="ex-tablecol156" class="classTablecol156">
+<p class="classPara144 para" id="ex-para144">
+<span id="ex-spanTbl138" class="classSpanTbl138 text55">Details EXAM NECK SPINE</span>
+</p>
+</td><td id="ex-tablecol157" class="classTablecol157">
+<p class="classPara145 para" id="ex-para145">
+<span id="ex-spanTbl139" class="classSpanTbl139 text44">$269</span>
+</p>
+</td><td id="ex-tablecol158" class="classTablecol158">
+<p class="classPara146 para" id="ex-para146">
+<span id="ex-spanTbl140" class="classSpanTbl140 text44">$121.57</span>
+</p>
+</td><td id="ex-tablecol159" class="classTablecol159">
+<p class="classPara147 para" id="ex-para147">
+<span id="ex-spanTbl141" class="classSpanTbl141 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol160" class="classTablecol160">
+<p class="classPara148 para" id="ex-para148">
+<span id="ex-spanTbl142" class="classSpanTbl142 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol161" class="classTablecol161">
+<p class="classPara149 para" id="ex-para149">
+<span id="ex-spanTbl143" class="classSpanTbl143 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol162" class="classTablecol162">
+<p class="classPara150 para" id="ex-para150">
+<span id="ex-spanTbl144" class="classSpanTbl144 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol163" class="classTablecol163">
+<p class="classPara151 para" id="ex-para151">
+<span id="ex-spanTbl145" class="classSpanTbl145 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol164" class="classTablecol164">
+<p class="classPara152 para" id="ex-para152">
+<span id="ex-spanTbl146" class="classSpanTbl146 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol165" class="classTablecol165">
+<p class="classPara153 para" id="ex-para153">
+<span id="ex-spanTbl147" class="classSpanTbl147 text44">$</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow29" class="classTableRow29">
+<td id="ex-tablecol166" class="classTablecol166">
+<p class="classPara154 para" id="ex-para154">
+<span id="ex-spanTbl148" class="classSpanTbl148 text55">Totals:</span>
+</p>
+</td><td id="ex-tablecol167" class="classTablecol167">
+<p class="classPara155 para" id="ex-para155">
+<span id="ex-spanTbl149" class="classSpanTbl149 text44">$5678</span>
+</p>
+</td><td id="ex-tablecol168" class="classTablecol168">
+<p class="classPara156 para" id="ex-para156">
+<span id="ex-spanTbl150" class="classSpanTbl150 text44">$4567</span>
+</p>
+</td><td id="ex-tablecol169" class="classTablecol169">
+<p class="classPara157 para" id="ex-para157">
+<span id="ex-spanTbl151" class="classSpanTbl151 text44">$3333</span>
+</p>
+</td><td id="ex-tablecol170" class="classTablecol170">
+<p class="classPara158 para" id="ex-para158">
+<span id="ex-spanTbl152" class="classSpanTbl152 text44">$5555</span>
+</p>
+</td><td id="ex-tablecol171" class="classTablecol171">
+<p class="classPara159 para" id="ex-para159">
+<span id="ex-spanTbl153" class="classSpanTbl153 text44">$67890</span>
+</p>
+</td><td id="ex-tablecol172" class="classTablecol172">
+<p class="classPara160 para" id="ex-para160">
+<span id="ex-spanTbl154" class="classSpanTbl154 text44">$67458</span>
+</p>
+</td><td id="ex-tablecol173" class="classTablecol173">
+<p class="classPara161 para" id="ex-para161">
+<span id="ex-spanTbl155" class="classSpanTbl155 text44">$34567</span>
+</p>
+</td><td id="ex-tablecol174" class="classTablecol174">
+<p class="classPara162 para" id="ex-para162">
+<span id="ex-spanTbl156" class="classSpanTbl156 text44">$4444</span>
+</p>
+</td><td id="ex-tablecol175" class="classTablecol175">
+<p class="classPara163 para" id="ex-para163">
+<span id="ex-spanTbl157" class="classSpanTbl157 text44">$777</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild8" class="classContainerChild8 verticalSpanChild">
+<div id="ex-table11" class="classTable11">
+<table id="claims3" class="classTable12">
+<col id="ex-tablecol176" class="classTablecol176">
+<col id="ex-tablecol177" class="classTablecol177">
+<col id="ex-tablecol178" class="classTablecol178">
+<col id="ex-tablecol179" class="classTablecol179">
+<col id="ex-tablecol180" class="classTablecol180">
+<col id="ex-tablecol181" class="classTablecol181">
+<col id="ex-tablecol182" class="classTablecol182">
+<col id="ex-tablecol183" class="classTablecol183">
+<col id="ex-tablecol184" class="classTablecol184">
+<col id="ex-tablecol185" class="classTablecol185">
+<tr id="ex-tableRow30" class="classTableRow30">
+<td id="ex-tablecol186" class="classTablecol186" colspan="10">
+<p class="classPara164 para" id="ex-para164">
+<span id="ex-spanTbl158" class="classSpanTbl158 text58">Claim for John (Dependent)</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow31" class="classTableRow31">
+<td id="ex-tablecol187" class="classTablecol187">
+<p class="classPara165 para" id="ex-para165">
+<span id="ex-spanTbl159" class="classSpanTbl159 text44">Claim ID: 345678</span>
+</p>
+<p class="classPara166 para" id="ex-para166">
+<span id="ex-spanTbl160" class="classSpanTbl160 text44">Received on: 02/11/2019</span>
+</p>
+</td><td id="ex-tablecol188" class="classTablecol188">
+<p class="classPara167 para" id="ex-para167">
+<span id="ex-spanTbl161" class="classSpanTbl161 text44">Amount </span>
+</p>
+<p class="classPara168 para" id="ex-para168">
+<span id="ex-spanTbl162" class="classSpanTbl162 text44">Billed</span>
+</p>
+</td><td id="ex-tablecol189" class="classTablecol189">
+<p class="classPara169 para" id="ex-para169">
+<span id="ex-spanTbl163" class="classSpanTbl163 text44">Member Rate</span>
+</p>
+</td><td id="ex-tablecol190" class="classTablecol190">
+<p class="classPara170 para" id="ex-para170">
+<span id="ex-spanTbl164" class="classSpanTbl164 text44">Pending or </span>
+</p>
+<p class="classPara171 para" id="ex-para171">
+<span id="ex-spanTbl165" class="classSpanTbl165 text44">Not Payable</span>
+</p>
+</td><td id="ex-tablecol191" class="classTablecol191">
+<p class="classPara172 para" id="ex-para172">
+<span id="ex-spanTbl166" class="classSpanTbl166 text44">Applied to</span>
+</p>
+<p class="classPara173 para" id="ex-para173">
+<span id="ex-spanTbl167" class="classSpanTbl167 text44">Deductible</span>
+</p>
+</td><td id="ex-tablecol192" class="classTablecol192">
+<p class="classPara174 para" id="ex-para174">
+<span id="ex-spanTbl168" class="classSpanTbl168 text44">Copay</span>
+</p>
+</td><td id="ex-tablecol193" class="classTablecol193">
+<p class="classPara175 para" id="ex-para175">
+<span id="ex-spanTbl169" class="classSpanTbl169 text44">Amount</span>
+</p>
+<p class="classPara176 para" id="ex-para176">
+<span id="ex-spanTbl170" class="classSpanTbl170 text44">remaining</span>
+</p>
+</td><td id="ex-tablecol194" class="classTablecol194">
+<p class="classPara177 para" id="ex-para177">
+<span id="ex-spanTbl171" class="classSpanTbl171 text44">Plan Pays</span>
+</p>
+</td><td id="ex-tablecol195" class="classTablecol195">
+<p class="classPara178 para" id="ex-para178">
+<span id="ex-spanTbl172" class="classSpanTbl172 text44">Your coinsurance</span>
+</p>
+</td><td id="ex-tablecol196" class="classTablecol196">
+<p class="classPara179 para" id="ex-para179">
+<span id="ex-spanTbl173" class="classSpanTbl173 text44">You may owe</span>
+</p>
+<p class="classPara180 para" id="ex-para180">
+<span id="ex-spanTbl174" class="classSpanTbl174 text44">C+D+E+H=I</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow32" class="classTableRow32">
+<td id="ex-tablecol197" class="classTablecol197">
+<p class="classPara181 para" id="ex-para181">
+<span id="ex-spanTbl175" class="classSpanTbl175 text55">Details EXAM OF LOWER</span>
+</p>
+</td><td id="ex-tablecol198" class="classTablecol198">
+<p class="classPara182 para" id="ex-para182">
+<span id="ex-spanTbl176" class="classSpanTbl176 text44">$270</span>
+</p>
+</td><td id="ex-tablecol199" class="classTablecol199">
+<p class="classPara183 para" id="ex-para183">
+<span id="ex-spanTbl177" class="classSpanTbl177 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol200" class="classTablecol200">
+<p class="classPara184 para" id="ex-para184">
+<span id="ex-spanTbl178" class="classSpanTbl178 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol201" class="classTablecol201">
+<p class="classPara185 para" id="ex-para185">
+<span id="ex-spanTbl179" class="classSpanTbl179 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol202" class="classTablecol202">
+<p class="classPara186 para" id="ex-para186">
+<span id="ex-spanTbl180" class="classSpanTbl180 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol203" class="classTablecol203">
+<p class="classPara187 para" id="ex-para187">
+<span id="ex-spanTbl181" class="classSpanTbl181 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol204" class="classTablecol204">
+<p class="classPara188 para" id="ex-para188">
+<span id="ex-spanTbl182" class="classSpanTbl182 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol205" class="classTablecol205">
+<p class="classPara189 para" id="ex-para189">
+<span id="ex-spanTbl183" class="classSpanTbl183 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol206" class="classTablecol206">
+<p class="classPara190 para" id="ex-para190">
+<span id="ex-spanTbl184" class="classSpanTbl184 text44">$</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow33" class="classTableRow33">
+<td id="ex-tablecol207" class="classTablecol207">
+<p class="classPara191 para" id="ex-para191">
+<span id="ex-spanTbl185" class="classSpanTbl185 text55">Details EXAM NECK SPINE</span>
+</p>
+</td><td id="ex-tablecol208" class="classTablecol208">
+<p class="classPara192 para" id="ex-para192">
+<span id="ex-spanTbl186" class="classSpanTbl186 text44">$269</span>
+</p>
+</td><td id="ex-tablecol209" class="classTablecol209">
+<p class="classPara193 para" id="ex-para193">
+<span id="ex-spanTbl187" class="classSpanTbl187 text44">$121.57</span>
+</p>
+</td><td id="ex-tablecol210" class="classTablecol210">
+<p class="classPara194 para" id="ex-para194">
+<span id="ex-spanTbl188" class="classSpanTbl188 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol211" class="classTablecol211">
+<p class="classPara195 para" id="ex-para195">
+<span id="ex-spanTbl189" class="classSpanTbl189 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol212" class="classTablecol212">
+<p class="classPara196 para" id="ex-para196">
+<span id="ex-spanTbl190" class="classSpanTbl190 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol213" class="classTablecol213">
+<p class="classPara197 para" id="ex-para197">
+<span id="ex-spanTbl191" class="classSpanTbl191 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol214" class="classTablecol214">
+<p class="classPara198 para" id="ex-para198">
+<span id="ex-spanTbl192" class="classSpanTbl192 text44">$123.31</span>
+</p>
+</td><td id="ex-tablecol215" class="classTablecol215">
+<p class="classPara199 para" id="ex-para199">
+<span id="ex-spanTbl193" class="classSpanTbl193 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol216" class="classTablecol216">
+<p class="classPara200 para" id="ex-para200">
+<span id="ex-spanTbl194" class="classSpanTbl194 text44">$</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow34" class="classTableRow34">
+<td id="ex-tablecol217" class="classTablecol217">
+<p class="classPara201 para" id="ex-para201">
+<span id="ex-spanTbl195" class="classSpanTbl195 text55">Totals:</span>
+</p>
+</td><td id="ex-tablecol218" class="classTablecol218">
+<p class="classPara202 para" id="ex-para202">
+<span id="ex-spanTbl196" class="classSpanTbl196 text44">$5678</span>
+</p>
+</td><td id="ex-tablecol219" class="classTablecol219">
+<p class="classPara203 para" id="ex-para203">
+<span id="ex-spanTbl197" class="classSpanTbl197 text44">$4567</span>
+</p>
+</td><td id="ex-tablecol220" class="classTablecol220">
+<p class="classPara204 para" id="ex-para204">
+<span id="ex-spanTbl198" class="classSpanTbl198 text44">$3333</span>
+</p>
+</td><td id="ex-tablecol221" class="classTablecol221">
+<p class="classPara205 para" id="ex-para205">
+<span id="ex-spanTbl199" class="classSpanTbl199 text44">$5555</span>
+</p>
+</td><td id="ex-tablecol222" class="classTablecol222">
+<p class="classPara206 para" id="ex-para206">
+<span id="ex-spanTbl200" class="classSpanTbl200 text44">$67890</span>
+</p>
+</td><td id="ex-tablecol223" class="classTablecol223">
+<p class="classPara207 para" id="ex-para207">
+<span id="ex-spanTbl201" class="classSpanTbl201 text44">$67458</span>
+</p>
+</td><td id="ex-tablecol224" class="classTablecol224">
+<p class="classPara208 para" id="ex-para208">
+<span id="ex-spanTbl202" class="classSpanTbl202 text44">$34567</span>
+</p>
+</td><td id="ex-tablecol225" class="classTablecol225">
+<p class="classPara209 para" id="ex-para209">
+<span id="ex-spanTbl203" class="classSpanTbl203 text44">$4444</span>
+</p>
+</td><td id="ex-tablecol226" class="classTablecol226">
+<p class="classPara210 para" id="ex-para210">
+<span id="ex-spanTbl204" class="classSpanTbl204 text44">$777</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild9" class="classContainerChild9 verticalSpanChild">
+<div id="ex-table13" class="classTable13">
+<table id="benefit1" class="classTable14">
+<col id="ex-tablecol227" class="classTablecol227">
+<col id="ex-tablecol228" class="classTablecol228">
+<col id="ex-tablecol229" class="classTablecol229">
+<col id="ex-tablecol230" class="classTablecol230">
+<tr id="ex-tableRow35" class="classTableRow35">
+<td id="ex-tablecol231" class="classTablecol231" colspan="4">
+<p class="classPara211 para" id="ex-para211">
+<span id="ex-spanTbl205" class="classSpanTbl205 text58">Your benefit balances to date from 3/1/15 to 2/29/16</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow36" class="classTableRow36">
+<td id="ex-tablecol232" class="classTablecol232" colspan="4">
+<p class="classPara212 para" id="ex-para212">
+<span id="ex-spanTbl206" class="classSpanTbl206 text59">Description</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow37" class="classTableRow37">
+<td id="ex-tablecol233" class="classTablecol233">
+<p class="classPara213 para" id="ex-para213">
+<span id="ex-spanTbl207" class="classSpanTbl207 text58">Individual</span>
+</p>
+</td><td id="ex-tablecol234" class="classTablecol234">
+<p class="classPara214 para" id="ex-para214">
+<span id="ex-spanTbl208" class="classSpanTbl208 text58">Annual Limit</span>
+</p>
+</td><td id="ex-tablecol235" class="classTablecol235">
+<p class="classPara215 para" id="ex-para215">
+<span id="ex-spanTbl209" class="classSpanTbl209 text58">Amount Used</span>
+</p>
+</td><td id="ex-tablecol236" class="classTablecol236">
+<p class="classPara216 para" id="ex-para216">
+<span id="ex-spanTbl210" class="classSpanTbl210 text58">Amount Renaming</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow38" class="classTableRow38">
+<td id="ex-tablecol237" class="classTablecol237">
+<p class="classPara217 para" id="ex-para217">
+<span id="ex-spanTbl211" class="classSpanTbl211 text55">Mike (Dependent)</span>
+</p>
+</td><td id="ex-tablecol238" class="classTablecol238">
+<p class="classPara218 para" id="ex-para218"></p>
+</td><td id="ex-tablecol239" class="classTablecol239">
+<p class="classPara219 para" id="ex-para219"></p>
+</td><td id="ex-tablecol240" class="classTablecol240">
+<p class="classPara220 para" id="ex-para220"></p>
+</td>
+</tr>
+<tr id="ex-tableRow39" class="classTableRow39">
+<td id="ex-tablecol241" class="classTablecol241">
+<p class="classPara221 para" id="ex-para221">
+<span id="ex-spanTbl212" class="classSpanTbl212 text44">Medical In Network Deductible</span>
+</p>
+</td><td id="ex-tablecol242" class="classTablecol242">
+<p class="classPara222 para" id="ex-para222">
+<span id="ex-spanTbl213" class="classSpanTbl213 text44">$1700</span>
+</p>
+</td><td id="ex-tablecol243" class="classTablecol243">
+<p class="classPara223 para" id="ex-para223">
+<span id="ex-spanTbl214" class="classSpanTbl214 text44">$695.77</span>
+</p>
+</td><td id="ex-tablecol244" class="classTablecol244">
+<p class="classPara224 para" id="ex-para224">
+<span id="ex-spanTbl215" class="classSpanTbl215 text44">$1004.23</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow40" class="classTableRow40">
+<td id="ex-tablecol245" class="classTablecol245">
+<p class="classPara225 para" id="ex-para225">
+<span id="ex-spanTbl216" class="classSpanTbl216 text44">Medical In Network Coinsurance</span>
+</p>
+</td><td id="ex-tablecol246" class="classTablecol246">
+<p class="classPara226 para" id="ex-para226">
+<span id="ex-spanTbl217" class="classSpanTbl217 text44">$6450</span>
+</p>
+</td><td id="ex-tablecol247" class="classTablecol247">
+<p class="classPara227 para" id="ex-para227">
+<span id="ex-spanTbl218" class="classSpanTbl218 text44">$695.77</span>
+</p>
+</td><td id="ex-tablecol248" class="classTablecol248">
+<p class="classPara228 para" id="ex-para228">
+<span id="ex-spanTbl219" class="classSpanTbl219 text44">$5754.23</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow41" class="classTableRow41">
+<td id="ex-tablecol249" class="classTablecol249">
+<p class="classPara229 para" id="ex-para229">
+<span id="ex-spanTbl220" class="classSpanTbl220 text44">Medical Out Of Network Deductible</span>
+</p>
+</td><td id="ex-tablecol250" class="classTablecol250">
+<p class="classPara230 para" id="ex-para230">
+<span id="ex-spanTbl221" class="classSpanTbl221 text44">$7000</span>
+</p>
+</td><td id="ex-tablecol251" class="classTablecol251">
+<p class="classPara231 para" id="ex-para231">
+<span id="ex-spanTbl222" class="classSpanTbl222 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol252" class="classTablecol252">
+<p class="classPara232 para" id="ex-para232">
+<span id="ex-spanTbl223" class="classSpanTbl223 text44">$7000</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow42" class="classTableRow42">
+<td id="ex-tablecol253" class="classTablecol253">
+<p class="classPara233 para" id="ex-para233">
+<span id="ex-spanTbl224" class="classSpanTbl224 text44">Medical Out Of Network Coinsurance</span>
+</p>
+</td><td id="ex-tablecol254" class="classTablecol254">
+<p class="classPara234 para" id="ex-para234">
+<span id="ex-spanTbl225" class="classSpanTbl225 text44">$12000</span>
+</p>
+</td><td id="ex-tablecol255" class="classTablecol255">
+<p class="classPara235 para" id="ex-para235">
+<span id="ex-spanTbl226" class="classSpanTbl226 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol256" class="classTablecol256">
+<p class="classPara236 para" id="ex-para236">
+<span id="ex-spanTbl227" class="classSpanTbl227 text44">$12000</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow43" class="classTableRow43">
+<td id="ex-tablecol257" class="classTablecol257">
+<p class="classPara237 para" id="ex-para237"></p>
+</td><td id="ex-tablecol258" class="classTablecol258">
+<p class="classPara238 para" id="ex-para238"></p>
+</td><td id="ex-tablecol259" class="classTablecol259">
+<p class="classPara239 para" id="ex-para239"></p>
+</td><td id="ex-tablecol260" class="classTablecol260">
+<p class="classPara240 para" id="ex-para240"></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild10" class="classContainerChild10 verticalSpanChild">
+<div id="ex-table15" class="classTable15">
+<table id="benefit2" class="classTable16">
+<col id="ex-tablecol261" class="classTablecol261">
+<col id="ex-tablecol262" class="classTablecol262">
+<col id="ex-tablecol263" class="classTablecol263">
+<col id="ex-tablecol264" class="classTablecol264">
+<tr id="ex-tableRow44" class="classTableRow44">
+<td id="ex-tablecol265" class="classTablecol265" colspan="4">
+<p class="classPara241 para" id="ex-para241">
+<span id="ex-spanTbl228" class="classSpanTbl228 text59">Description</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow45" class="classTableRow45">
+<td id="ex-tablecol266" class="classTablecol266">
+<p class="classPara242 para" id="ex-para242">
+<span id="ex-spanTbl229" class="classSpanTbl229 text58">Individual</span>
+</p>
+</td><td id="ex-tablecol267" class="classTablecol267">
+<p class="classPara243 para" id="ex-para243">
+<span id="ex-spanTbl230" class="classSpanTbl230 text58">Annual Limit</span>
+</p>
+</td><td id="ex-tablecol268" class="classTablecol268">
+<p class="classPara244 para" id="ex-para244">
+<span id="ex-spanTbl231" class="classSpanTbl231 text58">Amount Used</span>
+</p>
+</td><td id="ex-tablecol269" class="classTablecol269">
+<p class="classPara245 para" id="ex-para245">
+<span id="ex-spanTbl232" class="classSpanTbl232 text58">Amount Renaming</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow46" class="classTableRow46">
+<td id="ex-tablecol270" class="classTablecol270">
+<p class="classPara246 para" id="ex-para246">
+<span id="ex-spanTbl233" class="classSpanTbl233 text55">Jane (Self)</span>
+</p>
+</td><td id="ex-tablecol271" class="classTablecol271">
+<p class="classPara247 para" id="ex-para247"></p>
+</td><td id="ex-tablecol272" class="classTablecol272">
+<p class="classPara248 para" id="ex-para248"></p>
+</td><td id="ex-tablecol273" class="classTablecol273">
+<p class="classPara249 para" id="ex-para249"></p>
+</td>
+</tr>
+<tr id="ex-tableRow47" class="classTableRow47">
+<td id="ex-tablecol274" class="classTablecol274">
+<p class="classPara250 para" id="ex-para250">
+<span id="ex-spanTbl234" class="classSpanTbl234 text44">Medical In Network Deductible</span>
+</p>
+</td><td id="ex-tablecol275" class="classTablecol275">
+<p class="classPara251 para" id="ex-para251">
+<span id="ex-spanTbl235" class="classSpanTbl235 text44">$1700</span>
+</p>
+</td><td id="ex-tablecol276" class="classTablecol276">
+<p class="classPara252 para" id="ex-para252">
+<span id="ex-spanTbl236" class="classSpanTbl236 text44">$695.77</span>
+</p>
+</td><td id="ex-tablecol277" class="classTablecol277">
+<p class="classPara253 para" id="ex-para253">
+<span id="ex-spanTbl237" class="classSpanTbl237 text44">$1004.23</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow48" class="classTableRow48">
+<td id="ex-tablecol278" class="classTablecol278">
+<p class="classPara254 para" id="ex-para254">
+<span id="ex-spanTbl238" class="classSpanTbl238 text44">Medical In Network Coinsurance</span>
+</p>
+</td><td id="ex-tablecol279" class="classTablecol279">
+<p class="classPara255 para" id="ex-para255">
+<span id="ex-spanTbl239" class="classSpanTbl239 text44">$6450</span>
+</p>
+</td><td id="ex-tablecol280" class="classTablecol280">
+<p class="classPara256 para" id="ex-para256">
+<span id="ex-spanTbl240" class="classSpanTbl240 text44">$695.77</span>
+</p>
+</td><td id="ex-tablecol281" class="classTablecol281">
+<p class="classPara257 para" id="ex-para257">
+<span id="ex-spanTbl241" class="classSpanTbl241 text44">$5754.23</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow49" class="classTableRow49">
+<td id="ex-tablecol282" class="classTablecol282">
+<p class="classPara258 para" id="ex-para258">
+<span id="ex-spanTbl242" class="classSpanTbl242 text44">Medical Out Of Network Deductible</span>
+</p>
+</td><td id="ex-tablecol283" class="classTablecol283">
+<p class="classPara259 para" id="ex-para259">
+<span id="ex-spanTbl243" class="classSpanTbl243 text44">$7000</span>
+</p>
+</td><td id="ex-tablecol284" class="classTablecol284">
+<p class="classPara260 para" id="ex-para260">
+<span id="ex-spanTbl244" class="classSpanTbl244 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol285" class="classTablecol285">
+<p class="classPara261 para" id="ex-para261">
+<span id="ex-spanTbl245" class="classSpanTbl245 text44">$7000</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow50" class="classTableRow50">
+<td id="ex-tablecol286" class="classTablecol286">
+<p class="classPara262 para" id="ex-para262">
+<span id="ex-spanTbl246" class="classSpanTbl246 text44">Medical Out Of Network Coinsurance</span>
+</p>
+</td><td id="ex-tablecol287" class="classTablecol287">
+<p class="classPara263 para" id="ex-para263">
+<span id="ex-spanTbl247" class="classSpanTbl247 text44">$12000</span>
+</p>
+</td><td id="ex-tablecol288" class="classTablecol288">
+<p class="classPara264 para" id="ex-para264">
+<span id="ex-spanTbl248" class="classSpanTbl248 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol289" class="classTablecol289">
+<p class="classPara265 para" id="ex-para265">
+<span id="ex-spanTbl249" class="classSpanTbl249 text44">$12000</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow51" class="classTableRow51">
+<td id="ex-tablecol290" class="classTablecol290">
+<p class="classPara266 para" id="ex-para266"></p>
+</td><td id="ex-tablecol291" class="classTablecol291">
+<p class="classPara267 para" id="ex-para267"></p>
+</td><td id="ex-tablecol292" class="classTablecol292">
+<p class="classPara268 para" id="ex-para268"></p>
+</td><td id="ex-tablecol293" class="classTablecol293">
+<p class="classPara269 para" id="ex-para269"></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild11" class="classContainerChild11 verticalSpanChild">
+<div id="ex-table17" class="classTable17">
+<table id="benefit3" class="classTable18">
+<col id="ex-tablecol294" class="classTablecol294">
+<col id="ex-tablecol295" class="classTablecol295">
+<col id="ex-tablecol296" class="classTablecol296">
+<col id="ex-tablecol297" class="classTablecol297">
+<tr id="ex-tableRow52" class="classTableRow52">
+<td id="ex-tablecol298" class="classTablecol298" colspan="4">
+<p class="classPara270 para" id="ex-para270">
+<span id="ex-spanTbl250" class="classSpanTbl250 text59">Description</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow53" class="classTableRow53">
+<td id="ex-tablecol299" class="classTablecol299">
+<p class="classPara271 para" id="ex-para271">
+<span id="ex-spanTbl251" class="classSpanTbl251 text58">Individual</span>
+</p>
+</td><td id="ex-tablecol300" class="classTablecol300">
+<p class="classPara272 para" id="ex-para272">
+<span id="ex-spanTbl252" class="classSpanTbl252 text58">Annual Limit</span>
+</p>
+</td><td id="ex-tablecol301" class="classTablecol301">
+<p class="classPara273 para" id="ex-para273">
+<span id="ex-spanTbl253" class="classSpanTbl253 text58">Amount Used</span>
+</p>
+</td><td id="ex-tablecol302" class="classTablecol302">
+<p class="classPara274 para" id="ex-para274">
+<span id="ex-spanTbl254" class="classSpanTbl254 text58">Amount Renaming</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow54" class="classTableRow54">
+<td id="ex-tablecol303" class="classTablecol303">
+<p class="classPara275 para" id="ex-para275">
+<span id="ex-spanTbl255" class="classSpanTbl255 text55">John (Dependent)</span>
+</p>
+</td><td id="ex-tablecol304" class="classTablecol304">
+<p class="classPara276 para" id="ex-para276"></p>
+</td><td id="ex-tablecol305" class="classTablecol305">
+<p class="classPara277 para" id="ex-para277"></p>
+</td><td id="ex-tablecol306" class="classTablecol306">
+<p class="classPara278 para" id="ex-para278"></p>
+</td>
+</tr>
+<tr id="ex-tableRow55" class="classTableRow55">
+<td id="ex-tablecol307" class="classTablecol307">
+<p class="classPara279 para" id="ex-para279">
+<span id="ex-spanTbl256" class="classSpanTbl256 text44">Medical In Network Deductible</span>
+</p>
+</td><td id="ex-tablecol308" class="classTablecol308">
+<p class="classPara280 para" id="ex-para280">
+<span id="ex-spanTbl257" class="classSpanTbl257 text44">$1700</span>
+</p>
+</td><td id="ex-tablecol309" class="classTablecol309">
+<p class="classPara281 para" id="ex-para281">
+<span id="ex-spanTbl258" class="classSpanTbl258 text44">$695.77</span>
+</p>
+</td><td id="ex-tablecol310" class="classTablecol310">
+<p class="classPara282 para" id="ex-para282">
+<span id="ex-spanTbl259" class="classSpanTbl259 text44">$1004.23</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow56" class="classTableRow56">
+<td id="ex-tablecol311" class="classTablecol311">
+<p class="classPara283 para" id="ex-para283">
+<span id="ex-spanTbl260" class="classSpanTbl260 text44">Medical In Network Coinsurance</span>
+</p>
+</td><td id="ex-tablecol312" class="classTablecol312">
+<p class="classPara284 para" id="ex-para284">
+<span id="ex-spanTbl261" class="classSpanTbl261 text44">$6450</span>
+</p>
+</td><td id="ex-tablecol313" class="classTablecol313">
+<p class="classPara285 para" id="ex-para285">
+<span id="ex-spanTbl262" class="classSpanTbl262 text44">$695.77</span>
+</p>
+</td><td id="ex-tablecol314" class="classTablecol314">
+<p class="classPara286 para" id="ex-para286">
+<span id="ex-spanTbl263" class="classSpanTbl263 text44">$5754.23</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow57" class="classTableRow57">
+<td id="ex-tablecol315" class="classTablecol315">
+<p class="classPara287 para" id="ex-para287">
+<span id="ex-spanTbl264" class="classSpanTbl264 text44">Medical Out Of Network Deductible</span>
+</p>
+</td><td id="ex-tablecol316" class="classTablecol316">
+<p class="classPara288 para" id="ex-para288">
+<span id="ex-spanTbl265" class="classSpanTbl265 text44">$7000</span>
+</p>
+</td><td id="ex-tablecol317" class="classTablecol317">
+<p class="classPara289 para" id="ex-para289">
+<span id="ex-spanTbl266" class="classSpanTbl266 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol318" class="classTablecol318">
+<p class="classPara290 para" id="ex-para290">
+<span id="ex-spanTbl267" class="classSpanTbl267 text44">$7000</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow58" class="classTableRow58">
+<td id="ex-tablecol319" class="classTablecol319">
+<p class="classPara291 para" id="ex-para291">
+<span id="ex-spanTbl268" class="classSpanTbl268 text44">Medical Out Of Network Coinsurance</span>
+</p>
+</td><td id="ex-tablecol320" class="classTablecol320">
+<p class="classPara292 para" id="ex-para292">
+<span id="ex-spanTbl269" class="classSpanTbl269 text44">$12000</span>
+</p>
+</td><td id="ex-tablecol321" class="classTablecol321">
+<p class="classPara293 para" id="ex-para293">
+<span id="ex-spanTbl270" class="classSpanTbl270 text44">$0.00</span>
+</p>
+</td><td id="ex-tablecol322" class="classTablecol322">
+<p class="classPara294 para" id="ex-para294">
+<span id="ex-spanTbl271" class="classSpanTbl271 text44">$12000</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow59" class="classTableRow59">
+<td id="ex-tablecol323" class="classTablecol323">
+<p class="classPara295 para" id="ex-para295"></p>
+</td><td id="ex-tablecol324" class="classTablecol324">
+<p class="classPara296 para" id="ex-para296"></p>
+</td><td id="ex-tablecol325" class="classTablecol325">
+<p class="classPara297 para" id="ex-para297"></p>
+</td><td id="ex-tablecol326" class="classTablecol326">
+<p class="classPara298 para" id="ex-para298"></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild12" class="classContainerChild12 verticalSpanChild">
+<div id="ex-table19" class="classTable19">
+<table id="benefit4" class="classTable20">
+<tr id="ex-tableRow60" class="classTableRow60">
+<td id="ex-tablecol327" class="classTablecol327">
+<p class="classPara299 para" id="ex-para299">
+<span id="ex-spanTbl272" class="classSpanTbl272 text58">Make better health decisions and take action with confidence</span>
+</p>
+<p class="classPara300 para" id="ex-para300">
+<span id="ex-spanTbl273" class="classSpanTbl273 text58">
+<br>
+</span>
+</p>
+<p class="classPara301 para" id="ex-para301">
+<span id="ex-spanTbl274" class="classSpanTbl274 text58">With iTriage - a free healthcare app - you can find answers to your medical questions. Search symptoms and conditions, store your health information, and find local doctors. Text iTriage to 31996 to download the free app or visit www.itriagehealth.com.</span>
+</p>
+<p class="classPara302 para" id="ex-para302">
+<span id="ex-spanTbl275" class="classSpanTbl275 text58">
+<br>
+</span>
+</p>
+<p class="classPara303 para" id="ex-para303">
+<span id="ex-spanTbl276" class="classSpanTbl276 text58">Make time for yourself</span>
+</p>
+<p class="classPara304 para" id="ex-para304">
+<span id="ex-spanTbl277" class="classSpanTbl277 text58">Finding time to exercise can be tough. Check with your doctor and make a plan. Create a schedule and do your best to stick with it. It will soon become part of your routine.</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="gridLayoutRow">
+<td id="ex-gridCell4" class="classGridCell4 gridLayoutCell">
+<div id="ex-gridCell5" class="classGridCell5">
+<div id="Video" class="classTextbox1">
+<p class="classPara305 para" id="ex-para305">
+<span id="ex-spanTbx1" class="classSpanTbx1 text43">393</span>
+</p>
+</div>
+</div>
+</td>
+</tr>
+<tr class="gridLayoutRow">
+<td id="ex-gridCell6" class="classGridCell6 gridLayoutCell">
+<div id="ex-gridCell7" class="classGridCell7">
+<div id="ex-container3" class="classContainer3 container verticalSpan">
+<div id="ex-containerChild13" class="classContainerChild13 verticalSpanChild">
+<div id="ex-table21" class="classTable21">
+<table id="test1" class="classTable22">
+<tr id="ex-tableRow61" class="classTableRow61">
+<td id="ex-tablecol328" class="classTablecol328">
+<p class="classPara306 para" id="ex-para306">
+<span id="ex-spanTbl278" class="classSpanTbl278 text273">Statement Date: March 18, 2020</span>
+</p>
+</td><td id="ex-tablecol329" class="classTablecol329">
+<p class="classPara307 para" id="ex-para307">
+<span id="ex-spanTbl279" class="classSpanTbl279 text273">JANE H DOE</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="gridLayoutRow">
+<td id="ex-gridCell8" class="classGridCell8 gridLayoutCell">
+<div id="ex-gridCell9" class="classGridCell9">
+<div id="ex-container4" class="classContainer4 container verticalSpan">
+<div id="ex-containerChild14" class="classContainerChild14 verticalSpanChild">
+<div id="ex-table23" class="classTable23">
+<table id="customerinfo" class="classTable24">
+<tr id="ex-tableRow62" class="classTableRow62">
+<td id="ex-tablecol330" class="classTablecol330">
+<p class="classPara308 para" id="ex-para308">
+<span id="ex-spanTbl280" class="classSpanTbl280 text43">JANE H DOE</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow63" class="classTableRow63">
+<td id="ex-tablecol331" class="classTablecol331">
+<p class="classPara309 para" id="ex-para309">
+<span id="ex-spanTbl281" class="classSpanTbl281 text43">111</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow64" class="classTableRow64">
+<td id="ex-tablecol332" class="classTablecol332">
+<p class="classPara310 para" id="ex-para310">
+<span id="ex-spanTbl282" class="classSpanTbl282 text43">AETNA STREET</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow65" class="classTableRow65">
+<td id="ex-tablecol333" class="classTablecol333">
+<p class="classPara311 para" id="ex-para311">
+<span id="ex-spanTbl283" class="classSpanTbl283 text43">HARTFORD CT 06156</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild15" class="classContainerChild15 verticalSpanChild">
+<div id="ex-table25" class="classTable25">
+<table id="memberinfo" class="classTable26">
+<tr id="ex-tableRow66" class="classTableRow66">
+<td id="ex-tablecol334" class="classTablecol334">
+<p class="classPara312 para" id="ex-para312">
+<span id="ex-spanTbl284" class="classSpanTbl284 text43">Member Name</span>
+</p>
+</td><td id="ex-tablecol335" class="classTablecol335">
+<p class="classPara313 para" id="ex-para313">
+<span id="ex-spanTbl285" class="classSpanTbl285 text43">JANE H DOE</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow67" class="classTableRow67">
+<td id="ex-tablecol336" class="classTablecol336">
+<p class="classPara314 para" id="ex-para314">
+<span id="ex-spanTbl286" class="classSpanTbl286 text43">Member ID</span>
+</p>
+</td><td id="ex-tablecol337" class="classTablecol337">
+<p class="classPara315 para" id="ex-para315">
+<span id="ex-spanTbl287" class="classSpanTbl287 text43">W12345678</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow68" class="classTableRow68">
+<td id="ex-tablecol338" class="classTablecol338">
+<p class="classPara316 para" id="ex-para316">
+<span id="ex-spanTbl288" class="classSpanTbl288 text43">Group Number</span>
+</p>
+</td><td id="ex-tablecol339" class="classTablecol339">
+<p class="classPara317 para" id="ex-para317">
+<span id="ex-spanTbl289" class="classSpanTbl289 text43">0987654-100001AP1</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow69" class="classTableRow69">
+<td id="ex-tablecol340" class="classTablecol340">
+<p class="classPara318 para" id="ex-para318">
+<span id="ex-spanTbl290" class="classSpanTbl290 text43">Group Name</span><span id="ex-spanTbl291" class="classSpanTbl291 text43">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol341" class="classTablecol341">
+<p class="classPara319 para" id="ex-para319">
+<span id="ex-spanTbl292" class="classSpanTbl292 text43">TEST INC</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow70" class="classTableRow70">
+<td id="ex-tablecol342" class="classTablecol342">
+<p class="classPara320 para" id="ex-para320">
+<span id="ex-spanTbl293" class="classSpanTbl293 text43">Gender</span><span id="ex-spanTbl294" class="classSpanTbl294 text43">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol343" class="classTablecol343">
+<p class="classPara321 para" id="ex-para321">
+<span id="ex-spanTbl295" class="classSpanTbl295 text43">Female</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild16" class="classContainerChild16 verticalSpanChild">
+<div id="ex-table27" class="classTable27">
+<table id="companyinfo" class="classTable28">
+<col id="ex-tablecol344" class="classTablecol344">
+<col id="ex-tablecol345" class="classTablecol345">
+<col id="ex-tablecol346" class="classTablecol346">
+<tr id="ex-tableRow71" class="classTableRow71">
+<td id="ex-tablecol347" class="classTablecol347" colspan="3">
+<p class="classPara322 para" id="ex-para322">
+<span id="ex-spanTbl296" class="classSpanTbl296 text43">Emblem Health</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow72" class="classTableRow72">
+<td id="ex-tablecol348" class="classTablecol348" colspan="3">
+<p class="classPara323 para" id="ex-para323">
+<span id="ex-spanTbl297" class="classSpanTbl297 text43">P.O. BOX 981106 </span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow73" class="classTableRow73">
+<td id="ex-tablecol349" class="classTablecol349" colspan="3">
+<p class="classPara324 para" id="ex-para324">
+<span id="ex-spanTbl298" class="classSpanTbl298 text43">TX EL PASO TX 79998-1106</span>
+</p>
+</td>
+</tr>
+<tr>
+<td></td><td></td><td></td>
+</tr>
+</table>
+</div>
+</div>
+<div id="ex-containerChild17" class="classContainerChild17 verticalSpanChild">
+<div id="ex-table29" class="classTable29">
+<table id="eob" class="classTable30">
+<col id="ex-tablecol350" class="classTablecol350">
+<col id="ex-tablecol351" class="classTablecol351">
+<col id="ex-tablecol352" class="classTablecol352">
+<col id="ex-tablecol353" class="classTablecol353">
+<col id="ex-tablecol354" class="classTablecol354">
+<col id="ex-tablecol355" class="classTablecol355">
+<tr id="ex-tableRow74" class="classTableRow74">
+<td id="ex-tablecol356" class="classTablecol356" colspan="6">
+<p class="classPara325 para" id="ex-para325">
+<span id="ex-spanTbl299" class="classSpanTbl299 text317">Explanation of Benefits (EOB) - This is not a bill</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow75" class="classTableRow75">
+<td id="ex-tablecol357" class="classTablecol357" colspan="6">
+<p class="classPara326 para" id="ex-para326">
+<span id="ex-spanTbl300" class="classSpanTbl300 text42">This statement is called your EOB. It shows how much you may owe, the amount that was billed, and your member rate. It also shows the amount you saved and what your plan paid. Look at this statement carefully and make sure it is correct. If you do owe anything, you will receive a bill from your doctor or health care provider(s).</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow76" class="classTableRow76">
+<td id="ex-tablecol358" class="classTablecol358">
+<p class="classPara327 para" id="ex-para327">
+<span id="ex-spanTbl301" class="classSpanTbl301 text42">Amount you owe or already paid:</span><span id="ex-spanTbl302" class="classSpanTbl302 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol359" class="classTablecol359">
+<p class="classPara328 para" id="ex-para328">
+<span id="ex-spanTbl303" class="classSpanTbl303 text42">$0.00</span>
+</p>
+</td><td id="ex-tablecol360" class="classTablecol360">
+<p class="classPara329 para" id="ex-para329">
+<span id="ex-spanTbl304" class="classSpanTbl304 text42">Amount you Saved:</span><span id="ex-spanTbl305" class="classSpanTbl305 text42">
+<!-- spacer --></span><span id="ex-spanTbl306" class="classSpanTbl306 text42">
+<!-- spacer --></span><span id="ex-spanTbl307" class="classSpanTbl307 text42">
+<!-- spacer --></span><span id="ex-spanTbl308" class="classSpanTbl308 text42">
+<!-- spacer --></span><span id="ex-spanTbl309" class="classSpanTbl309 text42">
+<!-- spacer --></span><span id="ex-spanTbl310" class="classSpanTbl310 text42">
+<!-- spacer --></span><span id="ex-spanTbl311" class="classSpanTbl311 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol361" class="classTablecol361">
+<p class="classPara330 para" id="ex-para330">
+<span id="ex-spanTbl312" class="classSpanTbl312 text42">$294.12</span>
+</p>
+</td><td id="ex-tablecol362" class="classTablecol362">
+<p class="classPara331 para" id="ex-para331">
+<span id="ex-spanTbl313" class="classSpanTbl313 text42">Amount you have left to meet deductible:</span><span id="ex-spanTbl314" class="classSpanTbl314 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol363" class="classTablecol363">
+<p class="classPara332 para" id="ex-para332">
+<span id="ex-spanTbl315" class="classSpanTbl315 text42">$1004.23</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow77" class="classTableRow77">
+<td id="ex-tablecol364" class="classTablecol364">
+<p class="classPara333 para" id="ex-para333">
+<span id="ex-spanTbl316" class="classSpanTbl316 text42">TextAmount Billed:</span><span id="ex-spanTbl317" class="classSpanTbl317 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol365" class="classTablecol365">
+<p class="classPara334 para" id="ex-para334">
+<span id="ex-spanTbl318" class="classSpanTbl318 text42">$539.00</span>
+</p>
+</td><td id="ex-tablecol366" class="classTablecol366" colspan="2">
+<p class="classPara335 para" id="ex-para335">
+<span id="ex-spanTbl319" class="classSpanTbl319 text42">Going to a doctor or hospital in the network saves you money.</span>
+</p>
+</td><td id="ex-tablecol367" class="classTablecol367">
+<p class="classPara336 para" id="ex-para336">
+<span id="ex-spanTbl320" class="classSpanTbl320 text42">Annual deductible:</span><span id="ex-spanTbl321" class="classSpanTbl321 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol368" class="classTablecol368">
+<p class="classPara337 para" id="ex-para337">
+<span id="ex-spanTbl322" class="classSpanTbl322 text42">$1700.00</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow78" class="classTableRow78">
+<td id="ex-tablecol369" class="classTablecol369">
+<p class="classPara338 para" id="ex-para338">
+<span id="ex-spanTbl323" class="classSpanTbl323 text42">Plan Payment and Discounts:</span><span id="ex-spanTbl324" class="classSpanTbl324 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol370" class="classTablecol370">
+<p class="classPara339 para" id="ex-para339">
+<span id="ex-spanTbl325" class="classSpanTbl325 text42">$539.00</span>
+</p>
+</td><td id="ex-tablecol371" class="classTablecol371" colspan="2">
+<p class="classPara340 para" id="ex-para340">
+<span id="ex-spanTbl326" class="classSpanTbl326 text42">That's because we have arranged discounted rate with these providers</span>
+</p>
+</td><td id="ex-tablecol372" class="classTablecol372">
+<p class="classPara341 para" id="ex-para341">
+<span id="ex-spanTbl327" class="classSpanTbl327 text42">Deductible used:</span><span id="ex-spanTbl328" class="classSpanTbl328 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol373" class="classTablecol373">
+<p class="classPara342 para" id="ex-para342">
+<span id="ex-spanTbl329" class="classSpanTbl329 text42">$695.77</span>
+</p>
+</td>
+</tr>
+<tr id="ex-tableRow79" class="classTableRow79">
+<td id="ex-tablecol374" class="classTablecol374">
+<p class="classPara343 para" id="ex-para343">
+<span id="ex-spanTbl330" class="classSpanTbl330 text42">Deductible Remaining:</span><span id="ex-spanTbl331" class="classSpanTbl331 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol375" class="classTablecol375">
+<p class="classPara344 para" id="ex-para344">
+<span id="ex-spanTbl332" class="classSpanTbl332 text42">$0.00</span>
+</p>
+</td><td id="ex-tablecol376" class="classTablecol376" colspan="2">
+<p class="classPara345 para" id="ex-para345">
+<span id="ex-spanTbl333" class="classSpanTbl333 text42">The online provider directory can help you find a doctor or other health care professional. Just go to www.EmblemHealth.com</span>
+</p>
+</td><td id="ex-tablecol377" class="classTablecol377">
+<p class="classPara346 para" id="ex-para346">
+<span id="ex-spanTbl334" class="classSpanTbl334 text42">Deductible remaining:</span><span id="ex-spanTbl335" class="classSpanTbl335 text42">
+<!-- spacer --></span>
+</p>
+</td><td id="ex-tablecol378" class="classTablecol378">
+<p class="classPara347 para" id="ex-para347">
+<span id="ex-spanTbl336" class="classSpanTbl336 text42">$1004.23</span>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+<script src="ExAddinJSON.js" type="text/javascript"></script>
+</body>
+</html>
+</div>
+</div>
+</td><td style="width:10px;"></td><td>
+<video id="vd" controls="controls" height="450" width="200"></video>
+</td>
+</tr>
+</table>
+</div>
+<script>
+
+document.getElementById("unused").style.display="none";
+document.getElementById("button1").click();
+
+
+
+
+
+
+	var tst = vdo.textContent; 
+	
+	
+
+var str1 = vdo.textContent.trim();
+var str2 = ".mp4";
+var res = str1.concat(str2); 
+var result = res.trim();
+
+
+var vsrc = document.getElementById("vd");
+vsrc.src = result;
+vsrc.autoplay = true;
+vsrc.load(); 
+
+
+
+function myFunctionP() {
+ var x = document.getElementById("payment1");
+x.setAttribute("id", "myTr");
+  document.getElementById("myTable2").appendChild(x);
+ var y = document.getElementById("payment2");
+  document.getElementById("myTable2").appendChild(y);  
+    var t = document.getElementById("test1");
+	
+	
+ }
+ 
+
+ 
+function myFunctionO() {
+ var x = document.getElementById("overview");
+x.setAttribute("id", "myTr");
+  document.getElementById("myTable1").appendChild(x);
+ var y = document.getElementById("overview2");
+y.setAttribute("id", "myTr");
+  document.getElementById("myTable1").appendChild(y);  
+ var z = document.getElementById("overview3");
+z.setAttribute("id", "myTr");
+  document.getElementById("myTable1").appendChild(z);  
+   var t = document.getElementById("test1");
+t.setAttribute("id", "myTr");
+  document.getElementById("myTable").appendChild(t);
+   var a = document.getElementById("customerinfo");
+a.setAttribute("id", "myTr");
+  document.getElementById("customerinfo1").appendChild(a);
+   var b = document.getElementById("memberinfo");
+b.setAttribute("id", "myTr");
+  document.getElementById("memberinfo1").appendChild(b);
+   var c = document.getElementById("companyinfo");
+c.setAttribute("id", "myTr");
+  document.getElementById("companyinfo1").appendChild(c);
+   var d = document.getElementById("eob");
+d.setAttribute("id", "myTr");
+  document.getElementById("eob1").appendChild(d);
+  
+  
+  var vdo = document.getElementById("Video");
+	vdo.setAttribute("id", "vdo1");
+	document.getElementById("myTable1").appendChild(vdo);
+	
+	
+	
+	
+
+
+
+
+	var tst = vdo.textContent; 
+	
+	
+
+var str1 = vdo.textContent.trim();
+var str2 = ".mp4";
+var res = str1.concat(str2); 
+var result = res.trim();
+
+
+var vsrc = document.getElementById("vd");
+vsrc.src = result;
+vsrc.autoplay = true;
+vsrc.load(); 
+	
+  
+ }
+
+
+function myFunctionC() {
+  var x = document.getElementById("claims1");
+ x.setAttribute("id", "myTr");
+  document.getElementById("myTable3").appendChild(x);
+  var y = document.getElementById("claims2");
+ y.setAttribute("id", "myTr");
+  document.getElementById("myTable3").appendChild(y);
+  var z = document.getElementById("claims3");
+ z.setAttribute("id", "myTr");
+  document.getElementById("myTable3").appendChild(z);
+}
+
+function myFunctionB() {
+  var x = document.getElementById("benefit1");
+ x.setAttribute("id", "myTr");
+  document.getElementById("myTable4").appendChild(x);
+  var y = document.getElementById("benefit2");
+ y.setAttribute("id", "myTr");
+  document.getElementById("myTable4").appendChild(y);
+  var z = document.getElementById("benefit3");
+ z.setAttribute("id", "myTr");
+  document.getElementById("myTable4").appendChild(z);
+  var a = document.getElementById("benefit4");
+ a.setAttribute("id", "myTr");
+  document.getElementById("myTable4").appendChild(a);
+}
+
+
+
+function openPage(pageName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+ }
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+var acc = document.getElementsByClassName("accordion1");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+var acc = document.getElementsByClassName("accordion2");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+var acc = document.getElementsByClassName("accordion3");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+	
+function setColor1(){
+	var a,b,c,d
+		a= document.getElementById("button1");
+		b= document.getElementById("button2");
+	   c= document.getElementById("button3");
+	    d=document.getElementById("button4");
+		
+	
+	 a.style.color = "purple";
+	  b.style.color = "grey";
+	   c.style.color = "grey";
+	   d.style.color = "grey";
+	
+	}
+	
+	function setColor2(){
+	var a,b,c,d
+		a= document.getElementById("button1");
+		b= document.getElementById("button2");
+	   c= document.getElementById("button3");
+	    d=document.getElementById("button4");
+		
+	
+	 a.style.color = "grey";
+	  b.style.color = "purple";
+	   c.style.color = "grey";
+	   d.style.color  = "grey";
+	}
+	
+	function setColor3(){
+	var a,b,c,d
+		a= document.getElementById("button1");
+		b= document.getElementById("button2");
+	   c= document.getElementById("button3");
+	    d=document.getElementById("button4");
+		
+	
+	 a.style.color = "grey";
+	  b.style.color = "grey";
+	   c.style.color = "purple";
+	   d.style.color  = "grey";
+	}
+	
+	function setColor4(){
+	var a,b,c,d
+		a= document.getElementById("button1");
+		b= document.getElementById("button2");
+	   c= document.getElementById("button3");
+	    d=document.getElementById("button4");
+		
+	
+	 a.style.color = "grey";
+	  b.style.color = "grey";
+	   c.style.color = "grey";
+	   d.style.color  = "purple";
+	}
+
+</script>
+</body>
+</html>
